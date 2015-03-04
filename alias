@@ -1,0 +1,19 @@
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+ 
+export PS1='\n\n[\033[1;30m\]$(printf "%$(($COLUMNS - 2))s\n" "\t - \d")\[\033[1;34m\]\u\[\033[0;37m\]@\[\033[0;37m\]\w\[\033[1;32m\]$(parse_git_branch)\n\[\033[1;37m\]-> \[\033[0;37m\]'
+
+
+#####  Alias #####
+
+#git
+alias g=git
+alias c=clear
+alias gr=gradle
+
+#calendar
+alias calt='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e)" -e "^$(date +%e)"'
+
+

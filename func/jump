@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+JUMP_STORAGE="$HOME/.jumplist"
+JUMP_STORAGE_TMP="/tmp/jumplisttmp"
+JUMP_STORAGE_BOOKMARK="$HOME/.jumpbookmark"
+
+touch "$JUMP_STORAGE"
+
+__add_current_dir_to_jump () {
+  local dir="$(pwd -P)/"
+	  local found="$(egrep -m 1 "$dir\$" "$JUMP_STORAGE")"
+		  [ "$found" == "" ] && echo "0|$dir" >> "$JUMP_STORAGE"
+			}
+
+			j () {
+			  local dir
+				  case "$1" in
+					    "--") shift; dir="$@" ;;
+							    "-") pwd -P > "$JUMP_STORAGE_BOOKMARK" && return ;;
+									    "") dir=$(cat "$JUMP_STORAGE_BOOKMARK") ;;
+											    *) dir="$(grep -m 1 -i "${1}" "$JUMP_STORAGE")"
+													  esac
+
+														  if [ "$dir" != "" ]; then
+															    cp "$JUMP_STORAGE" "$JUMP_STORAGE_TMP"
+
+																	    local path=$(echo "$dir" | cut -d\| -f2-)
+
+																			    awk -v path="$path" 'BEGIN { FS = "|" } {
+																					        if ($2 == path) print $1+1 "|" $2
+																									        else print $_
+																													    }' "$JUMP_STORAGE_TMP" | sort -nr | head -n 200 > "$JUMP_STORAGE"
+
+																															    eval "cd ${path// /\\ } && l"
+																																	  fi
+																																		}
+
+																																		jl () {
+																																		  echo "Jump history:"
+																																			  column -t -s '|' "$JUMP_STORAGE"
+
+																																				  echo -e "\nJump bookmark:"
+																																					  cat "$JUMP_STORAGE_BOOKMARK"
+																																						}
+
+																																						jj () {
+																																						  local dir=$(cut -d\| -f2- "$JUMP_STORAGE" | fzf)
+																																							  j -- "$dir"
+										}

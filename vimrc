@@ -14,6 +14,14 @@ call vundle#end()
 filetype on
 " let g:molokai_original = 1
 
+" ctrp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+" nerdTree
+map <C-n> :NERDTreeToggle<CR>
+
+
 colorscheme molokai
 set background=dark
 set t_Co=256

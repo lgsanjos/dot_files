@@ -10,6 +10,7 @@ export PATH="$PATH:~/dotfiles/func/"
 #####  Alias #####
 
 alias g=git
+alias ..=cd ..
 alias c=clear
 alias gr=gradle
 

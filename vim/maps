@@ -1,4 +1,4 @@
-" vim: syntax=vim
+"vim:syntax=vim
 
 " Arrow keys
 noremap <Up> gk

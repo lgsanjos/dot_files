@@ -1,4 +1,4 @@
-" vim: filetype=vim
+"vim:syntax=vim
 
 " display a warning if file encoding isnt utf-8
 set statusline=

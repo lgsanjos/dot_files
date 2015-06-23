@@ -10,8 +10,10 @@ call vundle#begin()
   Bundle 'geoffharcourt/vim-matchit'
 
   Plugin 'tacahiroy/ctrlp-funky'
-
+  Bundle "scrooloose/nerdtree"
 call vundle#end()
+
+filetype plugin indent on
 
 filetype on
 

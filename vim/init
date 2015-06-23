@@ -1,0 +1,37 @@
+" vim: syntax=vim
+
+set encoding=utf-8
+
+" text display
+set expandtab "convert tab to space
+set nu " line numbers
+
+" Always show the status line
+set laststatus=2
+
+" Search highlighting and incremental
+set incsearch
+set hlsearch
+
+" identation
+set smartindent
+set tabstop=2 shiftwidth=2 
+
+" Auto indentation for programming =)
+set ai
+
+colorscheme molokai
+set background=dark
+set t_Co=256
+hi Search ctermbg=LightBlue
+set showcmd 
+set autoindent
+set foldenable
+set ignorecase
+set cursorline
+set showmode
+set number
+set showmatch
+nnoremap <CR> :noh<CR><CR>
+syntax on
+

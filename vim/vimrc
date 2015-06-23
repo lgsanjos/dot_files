@@ -1,0 +1,21 @@
+set rtp+=~/.vim/bundle/Vundle.vim
+filetype off
+
+call vundle#begin()
+
+  Plugin 'gmarik/Vundle.vim'
+  Plugin 'mattn/emmet-vim'
+  Plugin 'tomasr/molokai'
+  Bundle 'VimClojure'
+  Bundle 'geoffharcourt/vim-matchit'
+
+  Plugin 'tacahiroy/ctrlp-funky'
+
+call vundle#end()
+
+filetype on
+
+source ~/dotfiles/vim/init
+source ~/dotfiles/vim/plugins
+source ~/dotfiles/vim/maps
+source ~/dotfiles/vim/statusline

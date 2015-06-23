@@ -1,0 +1,15 @@
+" vim: syntax=vim
+
+" Arrow keys
+noremap <Up> gk
+noremap <Down> gj
+
+" nerdTree
+map <C-n> :NERDTreeToggle<CR>
+noremap <Leader>fu :CtrlPFunky<Cr>
+
+" ctrp
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+
+

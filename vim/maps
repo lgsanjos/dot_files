@@ -1,8 +1,8 @@
 "vim:syntax=vim
 
 " Arrow keys
-noremap <Up> gk
-noremap <Down> gj
+" noremap <Up> gk
+" noremap <Down> gj
 
 " nerdTree
 map <C-n> :NERDTreeToggle<CR>
@@ -12,4 +12,8 @@ noremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
+" Relative number
+nnoremap <C-b> :call NumberToggle()<cr>
 
+" Tab to navigate over tabs
+map <Tab> <C-W>w

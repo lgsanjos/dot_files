@@ -8,11 +8,10 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " Exclude non text files from vim search
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
 
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
-let g:ctrlp_funky_matchtype = 'path'
+"let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|.git\'
+"let g:ctrlp_funky_matchtype = 'path'
 let g:ctrlp_funky_syntax_highlight = 1
-
-
 
 " Clojure
 let vimclojure#FuzzyIndent=1
@@ -21,3 +20,10 @@ let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 
+" airline
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_nr_show = 1

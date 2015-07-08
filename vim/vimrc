@@ -9,6 +9,7 @@ call vundle#begin()
   Bundle 'VimClojure'
   Bundle 'geoffharcourt/vim-matchit'
 
+  Plugin 'bling/vim-airline'
   Plugin 'tacahiroy/ctrlp-funky'
   Bundle "scrooloose/nerdtree"
 call vundle#end()
@@ -18,6 +19,8 @@ filetype plugin indent on
 filetype on
 
 source ~/dotfiles/vim/init
+source ~/dotfiles/vim/ui
+source ~/dotfiles/vim/functions
 source ~/dotfiles/vim/plugins
 source ~/dotfiles/vim/maps
 source ~/dotfiles/vim/statusline

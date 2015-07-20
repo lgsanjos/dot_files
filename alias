@@ -17,4 +17,5 @@ alias gr=gradle
 ##### calendar #####
 alias calt='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e)" -e "^$(date +%e)"'
 
-
+# Store 10k history entries
+export HISTSIZE=10000

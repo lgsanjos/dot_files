@@ -1,0 +1,28 @@
+" vim: filetype=vim
+
+" Sets the colorscheme
+syntax enable
+set background=dark
+
+" set the space from the current line when scrolling
+set scrolloff=3
+
+" set the colors when using terminal commands
+set noguipty
+
+" command-line completion shows a list of matches
+set wmnu
+
+" set a better font for mac os
+set guifont=Menlo\ For\ Powerline
+let g:Powerline_symbols = 'fancy'
+let g:Powerline_colorscheme='solarized16'
+
+" sets numbers
+set nu
+
+"Highlight just the linenumber to highlight the line too just remove the liine hi clean CursorLine
+set cursorline
+hi CursorLine cterm=none
+hi clear CursorLine
+hi CursorLineNr ctermfg=3

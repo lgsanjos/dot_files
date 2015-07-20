@@ -1,7 +1,20 @@
 "vim:syntax=vim
 
-" Arrow keys
-" noremap <Up> gk
+" To screw myself up
+nmap <up> <nop>
+nmap <down> <nop>
+nmap <left> <nop>
+nmap <right> <nop>
+
+" To be more natural
+"nnoremap j gj
+"nnoremap k gk
+
+"esc will clear search
+":nnoremap <CR> :nohlsearch<CR><CR>
+nnoremap <CR> :noh<CR><CR>
+
+" Arrow keys " noremap <Up> gk
 " noremap <Down> gj
 
 " nerdTree
@@ -17,3 +30,9 @@ nnoremap <C-b> :call NumberToggle()<cr>
 
 " Tab to navigate over tabs
 map <Tab> <C-W>w
+
+"nnoremap <C-m> <C-W>\|
+"nnoremap <C-m> <C-W>=
+
+"To run ruby test
+:map ,r :w\|:!ruby %<cr>

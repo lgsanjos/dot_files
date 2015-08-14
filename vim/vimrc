@@ -12,6 +12,18 @@ call vundle#begin()
   Plugin 'bling/vim-airline'
   Plugin 'tacahiroy/ctrlp-funky'
   Bundle "scrooloose/nerdtree"
+
+" Code Completion"
+  Plugin 'AndrewRadev/splitjoin.vim'
+  Plugin 'Raimondi/delimitMate', { 'on': [] }
+  Plugin 'SirVer/ultisnips', { 'on': [] }
+  Plugin 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
+  Plugin 'honza/vim-snippets', { 'on': [] }
+  Plugin 'marijnh/tern_for_vim', { 'for': 'javascript' }
+  Plugin 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-surround'
+
 call vundle#end()
 
 filetype plugin indent on

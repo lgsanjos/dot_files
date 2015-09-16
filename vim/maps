@@ -11,14 +11,15 @@ nmap <right> <nop>
 "nnoremap k gk
 
 "esc will clear search
-":nnoremap <CR> :nohlsearch<CR><CR>
-nnoremap <CR> :noh<CR><CR>
+nnoremap <CR> :nohlsearch<CR><CR>
+nnoremap ,, :noh<CR><CR>
 
 " Arrow keys " noremap <Up> gk
 " noremap <Down> gj
 
 " nerdTree
 map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTreeFind<CR>
 noremap <Leader>fu :CtrlPFunky<Cr>
 
 " ctrp
@@ -35,4 +36,12 @@ map <Tab> <C-W>w
 "nnoremap <C-m> <C-W>=
 
 "To run ruby test
-:map ,r :w\|:!ruby %<cr>
+"map ,r :w\|:!ruby %<cr>
+map ,r :w\|:!clear;rake test:units TEST=% TESTOPTS=-v<cr>
+
+"To add comments
+map ,c :Commentary<CR>
+map ,w :w<CR>
+
+"to show whitespace
+map ,t /\s\+$

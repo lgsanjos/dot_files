@@ -78,7 +78,7 @@ function! RenameFile()
   endif
 endfunction
 
-map <leader>n :call RenameFile()<cr>
+map ,n :call RenameFile()<cr>
 
 
 " Extract variable
@@ -100,6 +100,6 @@ function! ExtractVariable()
   normal! $p
 endfunction
 
-vnoremap <leader>rv :call ExtractVariable()<cr>
+vnoremap ,e :call ExtractVariable()<cr>
 
 

@@ -10,9 +10,20 @@ export PATH="$PATH:~/dotfiles/func/"
 #####  Alias #####
 
 alias g=git
+alias r=rails
 alias ..='cd ..'
 alias c=clear
 alias gr=gradle
+alias s='screen -r'
+
+alias setnodegap='sudo n 0.10.35'
+alias setnodetaxi='sudo n 0.12.7 '
+
+alias snapsell='cd ~/development/deleteme/sell'
+alias snaphome='cd ~/development/deleteme/home'
+
+alias ativos='cd ~/project/RendimentosFinanceirosApp/'
+alias taxi='cd ~/project/taxi/'
 
 ##### calendar #####
 alias calt='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e)" -e "^$(date +%e)"'

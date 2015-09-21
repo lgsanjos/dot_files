@@ -6,6 +6,9 @@ nmap <down> <nop>
 nmap <left> <nop>
 nmap <right> <nop>
 
+map <C-j> 10j
+map <C-k> 10k
+
 " To be more natural
 "nnoremap j gj
 "nnoremap k gk
@@ -45,3 +48,9 @@ map ,w :w<CR>
 
 "to show whitespace
 map ,t /\s\+$
+
+"to replace line with yank
+map D "_ddkp"
+
+"to close buffer
+map ,q :bd<cr>

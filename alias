@@ -22,6 +22,7 @@ alias setnodetaxi='sudo n 0.12.7 '
 alias snapsell='cd ~/development/deleteme/sell'
 alias snaphome='cd ~/development/deleteme/home'
 
+alias blog='cd ~/project/lgsanjos'
 alias ativos='cd ~/project/RendimentosFinanceirosApp/'
 alias taxi='cd ~/project/taxi/'
 

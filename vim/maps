@@ -9,34 +9,30 @@ nmap <right> <nop>
 map <C-j> 10j
 map <C-k> 10k
 
+nmap <CR> :nohlsearch<CR>
+nmap ,, :nohlsearch<CR>
+
+" Insert a hash rocket with <c-l>
+imap <c-l> <space>=><space>
+
 " To be more natural
 "nnoremap j gj
 "nnoremap k gk
 
-"esc will clear search
-nnoremap <CR> :nohlsearch<CR><CR>
-nnoremap ,, :noh<CR><CR>
-
-" Arrow keys " noremap <Up> gk
-" noremap <Down> gj
-
 " nerdTree
 map <C-n> :NERDTreeToggle<CR>
-map <C-m> :NERDTreeFind<CR>
-noremap <Leader>fu :CtrlPFunky<Cr>
+map <C-N> :NERDTreeFind<CR>
 
 " ctrp
 " narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+noremap <Leader>fu :CtrlPFunky<Cr>
 
 " Relative number
 nnoremap <C-b> :call NumberToggle()<cr>
 
 " Tab to navigate over tabs
 map <Tab> <C-W>w
-
-"nnoremap <C-m> <C-W>\|
-"nnoremap <C-m> <C-W>=
 
 "To run ruby test
 "map ,r :w\|:!ruby %<cr>
@@ -47,7 +43,7 @@ map ,c :Commentary<CR>
 map ,w :w<CR>
 
 "to show whitespace
-map ,t /\s\+$
+map ,t /\s\+$<CR>
 
 "to replace line with yank
 map D "_ddkp"

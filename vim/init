@@ -13,12 +13,9 @@ set laststatus=2
 set nobackup
 set noswapfile
 
-"nnoremap ; :
-
 " Search highlighting and incremental
 set incsearch
 set hlsearch
-map <silent> <CR> :nohlsearch<CR>
 
 " identation
 set smartindent
@@ -39,15 +36,11 @@ set cursorline
 set showmode
 set number
 set showmatch
-nnoremap <CR> :noh<CR><CR>
 syntax on
 
 
 "If a file change it auto reloads
 set autoread
-
-" Insert a hash rocket with <c-l>
-imap <c-l> <space>=><space>
 
 " Indent if we're at the beginning of a line. Else, do completion.
 function! InsertTabWrapper()

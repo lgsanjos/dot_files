@@ -9,14 +9,9 @@ set backspace=indent,eol,start
 " Exclude non text files from vim search
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class
 
-"let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
-"let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|.git\'
-"let g:ctrlp_funky_matchtype = 'path'
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-    \ 'file': '\v\.(exe|so|dll)$',
-    \ 'link': 'some_bad_symbolic_links',
-    \ }
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|.git\'
+let g:ctrlp_funky_matchtype = 'path'
 
 let g:ctrlp_funky_syntax_highlight = 1
 
@@ -54,12 +49,11 @@ let g:UltiSnipsExpandTrigger='<Tab>'
 let g:UltiSnipsJumpForwardTrigger='<Tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 
-
 " YouCompleteMe"
-  let g:ycm_collect_identifiers_from_tags_files = 1
-  let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-  let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-  
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
 " Clojure
 let vimclojure#FuzzyIndent=1
 let vimclojure#HighlightBuiltins=1

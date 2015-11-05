@@ -10,7 +10,7 @@ call vundle#begin()
   Bundle 'geoffharcourt/vim-matchit'
 
   Plugin 'bling/vim-airline'
-  Plugin 'tacahiroy/ctrlp-funky'
+  Plugin 'ctrlpvim/ctrlp.vim'
   Bundle "scrooloose/nerdtree"
 
 " Code Completion"
@@ -23,6 +23,7 @@ call vundle#begin()
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
 
+  Plugin 'isRuslan/vim-es6' 
 call vundle#end()
 
 filetype plugin indent on

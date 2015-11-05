@@ -23,11 +23,11 @@ alias s='screen -r'
 alias setnodegap='sudo n 0.10.35'
 alias setnodetaxi='sudo n 0.12.7 '
 
-alias snapsell='cd ~/development/deleteme/sell'
-alias snaphome='cd ~/development/deleteme/home'
-
-alias blog='cd ~/project/lgsanjos'
-alias ativos='cd ~/project/RendimentosFinanceirosApp/'
+alias blog='cd ~/dev/m/lgsanjos'
+alias ativos='cd ~/dev/ativos'
+alias txi='cd ~/dev/txi/'
+alias skui='cd ~/dev/skore/ui'
+alias skor='cd ~/dev/skore/skore'
 
 ##### calendar #####
 alias calt='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e)" -e "^$(date +%e)"'

@@ -21,12 +21,6 @@ imap <c-l> <space>=><space>
 
 " nerdTree
 map <C-n> :NERDTreeToggle<CR>
-map <C-N> :NERDTreeFind<CR>
-
-" ctrp
-" narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-noremap <Leader>fu :CtrlPFunky<Cr>
 
 " Relative number
 nnoremap <C-b> :call NumberToggle()<cr>

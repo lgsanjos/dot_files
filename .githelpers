@@ -39,6 +39,9 @@ ANSI_WHITE='\033[37m'
 ANSI_WHITE_BOLD='\033[0;37;1m'
 ANSI_RESET='\033[0m'
 
+current_branch() {
+  git branch 2> /dev/null | grep ^* | awk '{print $2}'
+}
 
 show_git_head() {
   pretty_git_log -1

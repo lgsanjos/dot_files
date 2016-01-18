@@ -1,40 +1,38 @@
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+    required = true
+    clean = git media clean %f
+    smudge = git media smudge %f
 [color]
-	status = auto
-	branch = auto
-	interactive = auto
-	diff = auto
-	ui = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    diff = auto
+    ui = auto
 [user]
-	name = Luiz Guilherme
-	email = lgsanjos@gmail.com
+    name = Luiz Guilherme
+    email = lgsanjos@gmail.com
 [alias]
-	co = checkout 
-  cm = commit -m
-	sb = status -sb
-	st = status 
-	sr = svn rebase
-  rc = rebase --continue
-  ra = rebase --abort
-  cp = cherry-pick 
-  cpc = cherry-pick --continue 
-  cpa = cherry-pick --abort 
-	sfc = show --pretty="format:" --name-only
-  rma = !git ls-files --deleted -z | xargs -0 git rm
-  dc = diff --cached
-  
+    co = checkout
+    cm = commit -m
+    sb = status -sb
+    st = status
+    sr = svn rebase
+    rc = rebase --continue
+    ra = rebase --abort
+    cp = cherry-pick
+    cpc = cherry-pick --continue
+    cpa = cherry-pick --abort
+    sfc = show --pretty="format:" --name-only
+    rma = !git ls-files --deleted -z | xargs -0 git rm
+    dc = diff --cached
 
   cachecredential = config --global credential.helper "cache --timeout=360000"
 
   plog = log --graph -10 --pretty=format:'%C(yellow)%h%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s' --date=relative --abbrev-commit
   gh = log --graph --pretty=format:'%Cgreen%h %C(yellow)(%cr) %C(bold blue)<%an> %Creset %s %n' --abbrev-commit --date=relative  --all
-	pom = pull -r origin master
+  pom = pull -r origin master
   ppom = push origin master
-  pushgm = push github githead:master
-  pullgm = pull -r github master
+  pfo = push fork
 
   head = !git r -1
   h = !git head
@@ -43,11 +41,12 @@
   ra = !git r --all
   l = "!. ~/dotfiles/.githelpers && pretty_git_log -10"
   la = !git l --all
+
+  ub = "!git pull origin $(source ~/dotfiles/.githelpers && current_branch)"
+  urb = "!git pull -r origin $(source ~/dotfiles/.githelpers && current_branch)"
 [core]
 	editor = /usr/bin/vim
 [credential]
-	helper = cache
-	helper = cache
 	helper = cache
 	helper = add
 	helper = --add

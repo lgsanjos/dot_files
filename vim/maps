@@ -1,5 +1,7 @@
 "vim:syntax=vim
 
+set backspace=indent,eol,start
+
 " To screw myself up
 nmap <up> <nop>
 nmap <down> <nop>
@@ -12,6 +14,9 @@ map <C-k> 10k
 nmap <CR> :nohlsearch<CR>
 nmap ,, :nohlsearch<CR>
 
+" paste replacing current word"
+nmap <silent> cp "_cw<C-R>"<Esc>
+
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=><space>
 
@@ -21,6 +26,7 @@ imap <c-l> <space>=><space>
 
 " nerdTree
 map <C-n> :NERDTreeToggle<CR>
+map <C-h> :NERDTreeFind<CR>
 
 " Relative number
 nnoremap <C-b> :call NumberToggle()<cr>

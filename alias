@@ -25,9 +25,12 @@ alias setnodetaxi='sudo n 0.12.7 '
 
 alias blog='cd ~/dev/m/lgsanjos'
 alias ativos='cd ~/dev/ativos'
+alias assets='cd ~/dev/assets'
 alias txi='cd ~/dev/txi/'
 alias skui='cd ~/dev/skore/ui'
 alias skor='cd ~/dev/skore/skore'
+
+alias grep='grep --color'
 
 ##### calendar #####
 alias calt='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e)" -e "^$(date +%e)"'

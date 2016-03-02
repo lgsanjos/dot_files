@@ -42,8 +42,7 @@
   l = "!. ~/dotfiles/.githelpers && pretty_git_log -10"
   la = !git l --all
 
-  ub = "!git pull origin $(source ~/dotfiles/.githelpers && current_branch)"
-  urb = "!git pull -r origin $(source ~/dotfiles/.githelpers && current_branch)"
+  pr = "!git pull -r origin $(source ~/dotfiles/.githelpers && current_branch)"
 [core]
 	editor = /usr/bin/vim
 [credential]

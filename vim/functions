@@ -1,5 +1,22 @@
 " vim: filetype=vim
 
+  " Switch to rspec files or implementation files
+  function! SwitchRspecOrRuby()
+      if (expand('%:e') == 'rb')
+              let l:bar = expand('%:t')
+          if (expand('%') =~ '/spec/')
+              let l:bar = substitute(l:bar, "_spec.rb", "", "")
+              let l:file_name = system("find . -name ".l:bar.".rb")
+              execute ":e ".l:file_name
+          else
+              let l:bar = substitute(l:bar, ".rb", "", "")
+              let l:bar = l:bar."_spec.rb"
+              let l:file_name = system("find . -name ".l:bar)
+              execute ":e ".l:file_name
+          endif
+      endif
+  endfunction
+
   " Rename the current file
   function! RenameFile()
     let old_name = expand('%')

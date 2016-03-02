@@ -36,17 +36,25 @@ map <Tab> <C-W>w
 
 "To run ruby test
 "map ,r :w\|:!ruby %<cr>
-map ,r :w\|:!clear;rake test:units TEST=% TESTOPTS=-v<cr>
+map ,r :w\|:!clear;rspec % --format doc<CR>
 
 "To add comments
 map ,c :Commentary<CR>
 map ,w :w<CR>
-
-"to show whitespace
-map ,t /\s\+$<CR>
 
 "to replace line with yank
 map D "_ddkp"
 
 "to close buffer
 map ,q :bd<cr>
+
+"to move buffers
+map zl :bn<CR>
+map zh :bp<CR>
+
+"maximize buffers
+map zm <C-W>\|
+map zn <C-W>=
+
+"Switch to test files
+nmap ,t :call SwitchRspecOrRuby()<CR>

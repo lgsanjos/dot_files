@@ -57,4 +57,5 @@ map zm <C-W>\|
 map zn <C-W>=
 
 "Switch to test files
-nmap ,t :call SwitchRspecOrRuby()<CR>
+nmap ,tt :call SwitchRspecOrRuby('')<CR>
+nmap ,tr :call SwitchRspecOrRuby(":vsp \| ")<CR>

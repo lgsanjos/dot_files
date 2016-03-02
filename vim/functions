@@ -1,18 +1,17 @@
 " vim: filetype=vim
 
   " Switch to rspec files or implementation files
-  function! SwitchRspecOrRuby()
+  function! SwitchRspecOrRuby(opt)
       if (expand('%:e') == 'rb')
               let l:bar = expand('%:t')
-          if (expand('%') =~ '/spec/')
-              let l:bar = substitute(l:bar, "_spec.rb", "", "")
-              let l:file_name = system("find . -name ".l:bar.".rb")
-              execute ":e ".l:file_name
-          else
               let l:bar = substitute(l:bar, ".rb", "", "")
-              let l:bar = l:bar."_spec.rb"
-              let l:file_name = system("find . -name ".l:bar)
-              execute ":e ".l:file_name
+          if (expand('%') =~ '/spec/')
+              let l:bar = substitute(l:bar, "_spec", "", "")
+              let l:file_name = system("find . -name ".l:bar.".rb")
+              execute a:opt." :e ".l:file_name
+          else
+              let l:file_name = system("find . -name ".l:bar."_spec.rb")
+              execute a:opt." :e ".l:file_name
           endif
       endif
   endfunction

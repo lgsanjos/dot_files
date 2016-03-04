@@ -9,6 +9,8 @@ call vundle#begin()
   Bundle 'VimClojure'
   Bundle 'geoffharcourt/vim-matchit'
 
+  Plugin 'ag.vim'
+
   Plugin 'bling/vim-airline'
   Plugin 'ctrlpvim/ctrlp.vim'
   Bundle "scrooloose/nerdtree"
@@ -23,7 +25,7 @@ call vundle#begin()
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
 
-  Plugin 'isRuslan/vim-es6' 
+  Plugin 'isRuslan/vim-es6'
 call vundle#end()
 
 filetype plugin indent on

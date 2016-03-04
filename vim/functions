@@ -1,20 +1,40 @@
 " vim: filetype=vim
 
   " Switch to rspec files or implementation files
-  function! SwitchRspecOrRuby(opt)
+  function! DiscoverRubyFileName()
       if (expand('%:e') == 'rb')
-              let l:bar = expand('%:t')
-              let l:bar = substitute(l:bar, ".rb", "", "")
-          if (expand('%') =~ '/spec/')
+          let l:bar = expand('%:t')
+          let l:bar = substitute(l:bar, ".rb", "", "")
+          if (l:bar =~ 'spec')
               let l:bar = substitute(l:bar, "_spec", "", "")
               let l:file_name = system("find . -name ".l:bar.".rb")
-              execute a:opt." :e ".l:file_name
           else
               let l:file_name = system("find . -name ".l:bar."_spec.rb")
-              execute a:opt." :e ".l:file_name
           endif
+
+          return l:file_name
       endif
   endfunction
+
+  function! GetRspecFromCurrentFile()
+      let l:file = DiscoverRubyFileName()
+      if (l:file =~ '/spec/')
+          return l:file
+      else
+          return expand('%')
+      endif
+  endfunction
+
+  function! SwitchRspecOrRuby(opt)
+      execute a:opt." :e ".DiscoverRubyFileName()
+  endfunction
+
+  function! RunRspecForRubyFile()
+      execute ":w\|:! clear && rspec --format doc ".GetRspecFromCurrentFile()
+  endfunction
+
+
+  "   ------------------
 
   " Rename the current file
   function! RenameFile()

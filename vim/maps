@@ -58,4 +58,11 @@ map zn <C-W>=
 
 "Switch to test files
 nmap ,tt :call SwitchRspecOrRuby('')<CR>
-nmap ,tr :call SwitchRspecOrRuby(":vsp \| ")<CR>
+nmap ,ts :call SwitchRspecOrRuby(":vsp \| ")<CR>
+
+"Run rspec
+nmap ,tr :call RunRspecForRubyFile()<CR>
+
+"Search all occurrences
+map ,z :Ag <cword> -s -w --column<CR>
+

@@ -19,8 +19,8 @@ let g:ctrlp_show_hidden = 1
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
- set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor --depth 100 -S -g ""'
+ set grepprg=ag\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=.git\ --ignore-dir=public/assets\
+  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor --depth 100 -S -g "" --ignore-dir=tmp --ignore-dir=.git --ignore-dir=public/assets'
 endif
 
 " NerdTree

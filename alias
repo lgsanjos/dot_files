@@ -14,21 +14,17 @@ export PATH="$PATH:~/dotfiles/func/"
 #####  Alias #####
 
 alias g=git
-alias r=rails
-alias ..='cd ..'
-alias c=clear
-alias gr=gradle
-alias s='screen -r'
 
-alias setnodegap='sudo n 0.10.35'
-alias setnodetaxi='sudo n 0.12.7 '
+alias sshbt='ssh bellroy-production@10.0.1.31'
+alias sshbb='ssh bellroy-production@10.101.2.20'
+
 
 alias blog='cd ~/dev/m/lgsanjos'
 alias ativos='cd ~/dev/ativos'
 alias assets='cd ~/dev/assets'
-alias txi='cd ~/dev/txi/'
-alias skui='cd ~/dev/skore/ui'
-alias skor='cd ~/dev/skore/skore'
+alias trike='cd ~/dev/trike'
+alias bell='cd ~/dev/trike/bellroy'
+alias logis='cd ~/dev/trike/logistics'
 
 alias grep='grep --color'
 

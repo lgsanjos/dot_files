@@ -63,6 +63,9 @@ nmap ,ts :call SwitchRspecOrRuby(":vsp \| ")<CR>
 "Run rspec
 nmap ,tr :call RunRspecForRubyFile()<CR>
 
+"Run go
+:map ,g :!clear && go run %<CR>
+
 "Search all occurrences
 map ,z :Ag <cword> -s -w --column<CR>
 

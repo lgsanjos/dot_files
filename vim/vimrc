@@ -38,3 +38,4 @@ source ~/dotfiles/vim/functions
 source ~/dotfiles/vim/plugins
 source ~/dotfiles/vim/maps
 source ~/dotfiles/vim/statusline
+source ~/dotfiles/vim/rubocop.vim

@@ -73,6 +73,7 @@ command! -complete=custom,s:RuboCopSwitches -nargs=? RuboCop :call <SID>RuboCop(
 " Shortcuts for RuboCop
 if g:vimrubocop_keymap == 1
   nmap ,tc :RuboCop<CR>
+  nmap ,tv :!clear && RuboCop -a %<CR>
 endif
 
 let &cpo = s:save_cpo

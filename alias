@@ -18,6 +18,7 @@ alias g=git
 alias sshbt='ssh bellroy-production@10.0.1.31'
 alias sshbb='ssh bellroy-production@10.101.2.20'
 
+alias ag='ag --ignore-dir={.bzr,CVS,.git,.hg,.svn}'
 
 alias blog='cd ~/dev/m/lgsanjos'
 alias ativos='cd ~/dev/ativos'
@@ -27,7 +28,6 @@ alias bell='cd ~/dev/trike/bellroy'
 alias logis='cd ~/dev/trike/logistics'
 
 alias grep='grep --color --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
-alias ag='ag --ignore-dir={.bzr,CVS,.git,.hg,.svn}'
 
 ##### calendar #####
 alias calt='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e)" -e "^$(date +%e)"'

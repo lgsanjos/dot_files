@@ -12,27 +12,31 @@
     name = Luiz Guilherme
     email = lgsanjos@gmail.com
 [alias]
-    co = checkout
-    cm = commit -m
+    co = checkout # usage "g co ." or "g co -b <new branch>"
+    st = status # usage: g st
     sb = status -sb
-    st = status
-    sr = svn rebase
-    rc = rebase --continue
+    rc = rebase --continue # not so often used, but its good to have
     ra = rebase --abort
+    dc = diff --cached
     cp = cherry-pick
     cpc = cherry-pick --continue
     cpa = cherry-pick --abort
-    sfc = show --pretty="format:" --name-only
+    sfc = show --pretty="format:" --name-only # it stands for: show files changed, usage g sfc <hash>
     rma = !git ls-files --deleted -z | xargs -0 git rm
     dc = diff --cached
 
-  cachecredential = config --global credential.helper "cache --timeout=360000"
+  # This giant line is a nice formatted log, like this:
+  # hash (time) <user> -(branches which this commit is the head) commit message
+  # ps: I don't know why I named plog, just renamed it :)
 
   plog = log --graph -10 --pretty=format:'%C(yellow)%h%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s' --date=relative --abbrev-commit
+
   gh = log --graph --pretty=format:'%Cgreen%h %C(yellow)(%cr) %C(bold blue)<%an> %Creset %s %n' --abbrev-commit --date=relative  --all
   pom = pull -r origin master
   ppom = push origin master
   pfo = push fork
+
+  cachecredential = config --global credential.helper "cache --timeout=360000"
 
   head = !git r -1
   h = !git head
@@ -43,6 +47,8 @@
   la = !git l --all
 
   pr = "!git pull -r origin $(source ~/dotfiles/.githelpers && current_branch)"
+  pb = "!git push origin $(source ~/dotfiles/.githelpers && current_branch)"
+  pfb = "!git push origin $(source ~/dotfiles/.githelpers && current_branch)"
 [core]
 	editor = /usr/bin/vim
 [credential]

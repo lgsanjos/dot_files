@@ -69,3 +69,7 @@ nmap ,tr :call RunRspecForRubyFile()<CR>
 "Search all occurrences
 map ,z :Ag <cword> -s -w --column<CR>
 
+"beutify JSON
+map ,bj :<,'>!python -m json.tool<CR>
+
+:set colorcolumn=100

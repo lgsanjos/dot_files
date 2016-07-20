@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# From Destroy All Software screencast #10, at:
+# http://destroyallsoftware.com/screencasts/catalog/fast-tests-with-and-without-rails
+#
+# Released under the MIT license: http://opensource.org/licenses/MIT
+
+set -e
+
+need_rails=1
+
+if [ $# -gt 0 ]; then # we have args
+
+  filename=$(basename $1)
+  grep_filename=`echo $filename | sed 's/_spec.rb//g'`
+  file_to_execute=$(find . -type f -name *$grep_filename*_spec.rb)
+
+  if [ -n "$file_to_execute" ]; then
+    RAILS_ENV=test rspec $file_to_execute
+  fi
+    # if we can't match "spec_helper" in our file we have a stand-alone spec
+    # grep -r '\bspec_helper\b' $file_to_execute > /dev/null || need_rails=''
+
+    # if [ $need_rails ]; then
+      # command="bundle exec $command"
+    # fi
+
+    # RAILS_ENV=test $command $file_to_execute
+fi

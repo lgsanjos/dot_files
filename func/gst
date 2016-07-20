@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -e
+
+list_of_files=$(git status --short | grep '\.rb' | awk '{print $2}')
+rspec_script_name="spec4"
+
+function rubocop {
+  echo $(rubocop $filename)
+  rub_command="rubocop $filename | grep 'offenses'"
+  # eval $rub_command
+}
+
+function spec {
+  spec_command="$rspec_script_name $filename"
+  spec_output=$(eval $spec_command)
+  if [ -n "$spec_output" ]; then
+    spec_time=$(echo $spec_output | awk '{print $4}')
+    spec_result=$(echo $spec_output | sed 's/.*load) //g')
+    echo "$spec_result - in $spec_time ms"
+  fi
+}
+
+for filename in $list_of_files
+do
+  echo $filename
+  # echo "  rubocop: $(rubocop)"
+  echo "  specs: $(spec)"
+done

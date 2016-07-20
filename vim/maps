@@ -73,3 +73,4 @@ map ,z :Ag <cword> -s -w --column<CR>
 map ,bj :<,'>!python -m json.tool<CR>
 
 :set colorcolumn=100
+map zo :vsp \| :find ~/Dropbox/Public/TODO<CR>

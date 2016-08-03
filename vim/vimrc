@@ -14,6 +14,7 @@ call vundle#begin()
   Plugin 'bling/vim-airline'
   Plugin 'ctrlpvim/ctrlp.vim'
   Bundle "scrooloose/nerdtree"
+  Plugin 'airblade/vim-gitgutter'
 
 " Code Completion"
   Plugin 'AndrewRadev/splitjoin.vim'

@@ -74,3 +74,8 @@ map ,bj :<,'>!python -m json.tool<CR>
 
 :set colorcolumn=100
 map zo :vsp \| :find ~/Dropbox/Public/TODO<CR>
+
+nnoremap Q <nop>
+nnoremap K <nop>
+
+map zg :GitGutterToggle<CR>

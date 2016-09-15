@@ -7,6 +7,6 @@ list_of_files=$(git status --short | grep '\.rb' | awk '{print $2}')
 for filename in $list_of_files
 do
   echo $filename
-  rub_command="rubocop $filename | grep 'offenses'"
+  rub_command="rubocop $filename | grep 'offense'"
   eval $rub_command
 done

@@ -1,0 +1,26 @@
+call plug#begin('~/.nvim/plugged')
+  Plug 'junegunn/vim-easy-align'
+  Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+  Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+  Plug 'scrooloose/nerdtree'
+  Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'tomasr/molokai'
+  Plug 'ag.vim'
+  Plug 'bling/vim-airline'
+
+  Plug 'tpope/vim-rails'
+  Plug 'kchmck/vim-coffee-script'
+  Plug 'isRuslan/vim-es6'
+
+call plug#end()
+
+source ~/dotfiles/nvim/init
+source ~/dotfiles/nvim/maps
+source ~/dotfiles/nvim/ui
+source ~/dotfiles/nvim/functions
+source ~/dotfiles/nvim/plugins
+source ~/dotfiles/nvim/statusline
+source ~/dotfiles/vim/rubocop.vim
+

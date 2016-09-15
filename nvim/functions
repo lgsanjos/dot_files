@@ -1,0 +1,60 @@
+" vim: filetype=vim
+
+  " Switch to rspec files or implementation files
+  function! DiscoverRubyFileName()
+      if (expand('%:e') == 'rb')
+          let l:bar = expand('%:t')
+          let l:bar = substitute(l:bar, ".rb", "", "")
+          if (l:bar =~ 'spec')
+              let l:bar = substitute(l:bar, "_spec", "", "")
+              let l:file_name = system("find . -name ".l:bar.".rb")
+          else
+              let l:file_name = system("find . -name ".l:bar."_spec.rb")
+          endif
+
+          return l:file_name
+      endif
+  endfunction
+
+  function! GetRspecFromCurrentFile()
+      let l:file = DiscoverRubyFileName()
+      if (l:file =~ '/spec/')
+          return l:file
+      else
+          return expand('%')
+      endif
+  endfunction
+
+  function! SwitchRspecOrRuby(opt)
+      execute a:opt." :e ".DiscoverRubyFileName()
+  endfunction
+
+  function! RunRspecForRubyFile()
+      execute ":w\|:! clear && rspec --format doc ".GetRspecFromCurrentFile()
+  endfunction
+
+
+  "   ------------------
+
+  " Rename the current file
+  function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+      exec ':saveas ' . new_name
+      exec ':silent !rm ' . old_name
+      redraw!
+    endif
+  endfunction
+
+  function! NumberToggle()
+    if(&relativenumber == 1)
+      set norelativenumber
+      set number
+    else
+      set nonumber
+      set relativenumber
+    endif
+  endfunc
+
+  autocmd BufNewFile,BufRead *.json set ft=javascript

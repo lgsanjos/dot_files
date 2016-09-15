@@ -1,0 +1,83 @@
+"vim:syntax=vim
+
+set backspace=indent,eol,start
+
+" To screw myself up
+nmap <up> <nop>
+nmap <down> <nop>
+nmap <left> <nop>
+nmap <right> <nop>
+
+map <C-j> 10j
+map <C-k> 10k
+
+nmap <CR> :nohlsearch<CR>
+nmap ,, :nohlsearch<CR>
+
+" paste replacing current word"
+nmap <silent> cp "_cw<C-R>"<Esc>
+
+" Insert a hash rocket with <c-l>
+imap <c-l> <space>=><space>
+
+" To be more natural
+"nnoremap j gj
+"nnoremap k gk
+
+" nerdTree
+map <C-n> :NERDTreeToggle<CR>
+map <C-h> :NERDTreeFind<CR>
+
+" Relative number
+nnoremap <C-b> :call NumberToggle()<cr>
+
+" Tab to navigate over tabs
+map <Tab> <C-W>w
+
+"To run ruby test
+"map ,r :w\|:!ruby %<cr>
+map ,r :w\|:!clear;rspec % --format doc<CR>
+
+"To add comments
+map ,c :Commentary<CR>
+map ,w :w<CR>
+
+"to replace line with yank
+map D "_ddkp"
+
+"to close buffer
+map ,q :bw<cr>
+
+"to move buffers
+map zl :bn<CR>
+map zh :bp<CR>
+
+"maximize buffers
+map zm <C-W>\|
+map zn <C-W>=
+
+"Switch to test files
+nmap ,tt :call SwitchRspecOrRuby('')<CR>
+nmap ,ts :call SwitchRspecOrRuby(":vsp \| ")<CR>
+
+"Run rspec
+nmap ,tr :call RunRspecForRubyFile()<CR>
+
+"Run go
+:map ,g :!clear && go run %<CR>
+
+"Search all occurrences
+map ,z :Ag <cword> -s -w --column<CR>
+
+"beutify JSON
+map ,bj :<,'>!python -m json.tool<CR>
+
+:set colorcolumn=100
+
+map zo :vsp \| :find ~/Dropbox/Public/TODO<CR><C-W>r:vertical resize -60<CR><C-W>w
+
+nnoremap Q <nop>
+nnoremap K <nop>
+
+map zg :GitGutterToggle<CR>
+

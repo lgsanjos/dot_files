@@ -1,0 +1,77 @@
+"vim:syntax=vim
+
+set encoding=utf-8
+
+" text display
+set expandtab "convert tab to space
+set nu " line numbers
+
+" Always show the status line
+set laststatus=2
+
+" Show trailing white space
+match Error '\s\+$'
+
+" Delete trailing white space
+nnoremap ,s :%s/\s\+$//e<CR>
+
+" Allow copy to clipboard
+set clipboard=unnamed
+
+" duh
+set nobackup
+set noswapfile
+
+" Search highlighting and incremental
+set incsearch
+set hlsearch
+
+" identation
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Auto indentation for programming =)
+set ai
+
+colorscheme molokai
+set background=dark
+set t_Co=256
+hi Search ctermbg=LightBlue
+set showcmd
+set autoindent
+set foldenable
+set ignorecase
+set cursorline
+set showmode
+set number
+set showmatch
+syntax on
+
+
+"If a file change it auto reloads
+set autoread
+
+" Indent if we're at the beginning of a line. Else, do completion.
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+
+"Open files on the same dir
+cnoremap <expr> %% expand('%:h').'/'
+map <leader>e :edit %%
+map <leader>v :view %%
+
+vnoremap ,e :call ExtractVariable()<cr>
+
+
+

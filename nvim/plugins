@@ -1,0 +1,83 @@
+"vim:syntax=vim
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+set wildignore=*/tmp/*,*.so,*.swp,*.zip,*.class,*.jpg,*/.git/*
+
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_regexp = 1
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.sass-cache$|\.hg$\|\.svn$\|\.yardoc\|public$|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+\ }
+
+let g:ctrlp_show_hidden = 1
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+ set grepprg=ag\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=.git\ --ignore-dir=public/assets\
+  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor --depth 100 -S -g "" --ignore-dir=tmp --ignore-dir=.git --ignore-dir=public/assets'
+endif
+
+" NerdTree
+
+function! NERDTreeHighlightFile(extension, fg, bg, mod)
+  exec 'autocmd filetype nerdtree syn match ' . a:extension . ' #^\s\+.*' . a:extension . '\*\?$#'
+    exec 'autocmd filetype nerdtree highlight ' . a:extension . ' ctermbg=' . a:bg . ' ctermfg=' . a:fg . ' cterm=' . a:mod
+endfunction
+
+call NERDTreeHighlightFile('css',         '13',   'NONE',  'NONE')
+call NERDTreeHighlightFile('feature',     '41',   'NONE',  'NONE')
+call NERDTreeHighlightFile('gradle',      '222',  'NONE',  'NONE')
+call NERDTreeHighlightFile('groovy',      '131',  'NONE',  'NONE')
+call NERDTreeHighlightFile('html',        '215',  'NONE',  'NONE')
+call NERDTreeHighlightFile('java',        '132',  'NONE',  'NONE')
+call NERDTreeHighlightFile('js',          '201',  'NONE',  'NONE')
+call NERDTreeHighlightFile('json',        '191',  'NONE',  'NONE')
+call NERDTreeHighlightFile('md',          '184',  'NONE',  'NONE')
+call NERDTreeHighlightFile('properties',  '229',  'NONE',  'NONE')
+call NERDTreeHighlightFile('rb',          '197',  'NONE',  'NONE')
+call NERDTreeHighlightFile('sh',          '208',  'NONE',  'NONE')
+call NERDTreeHighlightFile('vim',         '255',  'NONE',  'NONE')
+call NERDTreeHighlightFile('xml',         '210',  'NONE',  'NONE')
+call NERDTreeHighlightFile('yaml',        '229',  'NONE',  'NONE')
+call NERDTreeHighlightFile('yml',         '229',  'NONE',  'NONE')
+
+let NERDTreeChDirMode = 2
+let NERDTreeShowLineNumbers = 1
+let NERDTreeWinSize = 40
+let NERDTreeMinimalUI = 1
+let NERDTreeCascadeOpenSingleChildDir = 1
+
+let g:UltiSnipsExpandTrigger='<Tab>'
+let g:UltiSnipsJumpForwardTrigger='<Tab>'
+let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
+
+" YouCompleteMe"
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+
+" Clojure
+let vimclojure#FuzzyIndent=1
+let vimclojure#HighlightBuiltins=1
+let vimclojure#HighlightContrib=1
+let vimclojure#DynamicHighlighting=1
+let vimclojure#ParenRainbow=1
+
+" Rainbow parentheses"
+"autocmd Syntax * RainbowParenthesesLoadRound
+"autocmd Syntax * RainbowParenthesesLoadSquare
+"autocmd Syntax * RainbowParenthesesLoadBraces
+
+" airline
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_nr_show = 1

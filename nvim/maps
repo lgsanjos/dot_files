@@ -34,10 +34,6 @@ nnoremap <C-b> :call NumberToggle()<cr>
 " Tab to navigate over tabs
 map <Tab> <C-W>w
 
-"To run ruby test
-"map ,r :w\|:!ruby %<cr>
-map ,r :w\|:!clear;rspec % --format doc<CR>
-
 "To add comments
 map ,c :Commentary<CR>
 map ,w :w<CR>
@@ -46,7 +42,8 @@ map ,w :w<CR>
 map D "_ddkp"
 
 "to close buffer
-map ,q :bw<cr>
+map ,q :bd!<cr>
+map ,e :bw!<cr>
 
 "to move buffers
 map zl :bn<CR>
@@ -57,14 +54,17 @@ map zm <C-W>\|
 map zn <C-W>=
 
 "Switch to test files
-nmap ,tt :call SwitchRspecOrRuby('')<CR>
-nmap ,ts :call SwitchRspecOrRuby(":vsp \| ")<CR>
+nmap ,tt :call SwitchRspecOrRuby('', '')<CR>
+nmap ,ts :call SwitchRspecOrRuby(":vsp \| ", '')<CR>
 
-"Run rspec
+"Run rspec:
+
+ " by default use spring to run specs
+let test#ruby#rspec#executable = 'spring rspec'
+let test#strategy = 'neovim'
+nmap ,r :TestNearest<CR>
+nmap ,R :TestFile<CR>
 nmap ,tr :call RunRspecForRubyFile()<CR>
-
-"Run go
-:map ,g :!clear && go run %<CR>
 
 "Search all occurrences
 map ,z :Ag <cword> -s -w --column<CR>

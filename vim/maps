@@ -46,7 +46,7 @@ map ,w :w<CR>
 map D "_ddkp"
 
 "to close buffer
-map ,q :bd<cr>
+map ,q :bw<cr>
 
 "to move buffers
 map zl :bn<CR>
@@ -73,7 +73,8 @@ map ,z :Ag <cword> -s -w --column<CR>
 map ,bj :<,'>!python -m json.tool<CR>
 
 :set colorcolumn=100
-map zo :vsp \| :find ~/Dropbox/Public/TODO<CR>
+
+map zo :vsp \| :find ~/Dropbox/Public/TODO<CR><C-W>r:vertical resize -60<CR><C-W>w
 
 nnoremap Q <nop>
 nnoremap K <nop>

@@ -2,6 +2,8 @@
 
 set encoding=utf-8
 
+autocmd! BufWritePost * Neomake
+
 " text display
 set expandtab "convert tab to space
 set nu " line numbers

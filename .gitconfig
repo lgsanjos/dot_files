@@ -29,7 +29,7 @@
   # hash (time) <user> -(branches which this commit is the head) commit message
   # ps: I don't know why I named plog, just renamed it :)
 
-  plog = log --graph -10 --pretty=format:'%C(yellow)%h%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset -%C(yellow)%d%Creset %s' --date=relative --abbrev-commit
+  plog = log --graph -10 --pretty=format:'%C(yellow)%h %Cgreen(%cr) %C(bold blue)<%an> %C(red)%d %C(reset)%s' --date=relative --abbrev-commit
 
   gh = log --graph --pretty=format:'%Cgreen%h %C(yellow)(%cr) %C(bold blue)<%an> %Creset %s %n' --abbrev-commit --date=relative  --all
   pom = pull -r origin master

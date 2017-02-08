@@ -15,6 +15,12 @@ call vundle#begin()
   Plugin 'ctrlpvim/ctrlp.vim'
   Bundle "scrooloose/nerdtree"
   Plugin 'airblade/vim-gitgutter'
+  Plugin 'vim-scripts/Vim-R-plugin'
+
+  Plugin 'JamshedVesuna/vim-markdown-preview'
+
+  Plugin 'slim-template/vim-slim.git'
+  Plugin 'Yggdroot/indentLine'
 
 " Code Completion"
   Plugin 'AndrewRadev/splitjoin.vim'

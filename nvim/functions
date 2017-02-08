@@ -25,12 +25,12 @@
       endif
   endfunction
 
-  function! SwitchRspecOrRuby(opt)
-      execute a:opt." :e ".DiscoverRubyFileName()
+  function! SwitchRspecOrRuby(before, after)
+      execute a:before." :e ".DiscoverRubyFileName().a:after
   endfunction
 
   function! RunRspecForRubyFile()
-      execute ":w\|:! clear && rspec --format doc ".GetRspecFromCurrentFile()
+      execute ":w\| :vsp | :terminal rspec --format doc ".GetRspecFromCurrentFile()." | :bp"
   endfunction
 
 

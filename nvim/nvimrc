@@ -1,9 +1,9 @@
 call plug#begin('~/.nvim/plugged')
   Plug 'junegunn/vim-easy-align'
   Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-  Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+  "Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
   Plug 'scrooloose/nerdtree'
-  Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+  "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tomasr/molokai'
@@ -14,13 +14,35 @@ call plug#begin('~/.nvim/plugged')
   Plug 'kchmck/vim-coffee-script'
   Plug 'isRuslan/vim-es6'
 
+  Plug 'JamshedVesuna/vim-markdown-preview'
+
+  Plug 'https://github.com/kassio/neoterm.git'
+  Plug 'https://github.com/neomake/neomake.git'
+
+  Plug 'https://github.com/airblade/vim-gitgutter.git'
+  Plug 'janko-m/vim-test'
+
+  " Code Completion"
+  Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'Raimondi/delimitMate', { 'on': [] }
+  Plug 'SirVer/ultisnips', { 'on': [] }
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
+  Plug 'honza/vim-snippets', { 'on': [] }
+  Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-rails'
+  " JS
+  Plug 'kchmck/vim-coffee-script'
+  Plug 'isRuslan/vim-es6'
+
 call plug#end()
 
 source ~/dotfiles/nvim/init
-source ~/dotfiles/nvim/maps
 source ~/dotfiles/nvim/ui
 source ~/dotfiles/nvim/functions
 source ~/dotfiles/nvim/plugins
+source ~/dotfiles/nvim/maps
 source ~/dotfiles/nvim/statusline
 source ~/dotfiles/vim/rubocop.vim
 

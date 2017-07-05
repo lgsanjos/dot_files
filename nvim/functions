@@ -25,6 +25,15 @@
       endif
   endfunction
 
+  function! CreateRspecFromCurrentFile()
+     let l:bar = expand('%')
+     let l:bar = substitute(l:bar, ".rb", "_spec.rb", "")
+     let l:bar = substitute(l:bar, "app/", "spec/", "")
+     execute ":e ".l:bar
+     execute ':silent !mkdir -p %:h'
+     write
+  endfunction
+
   function! SwitchRspecOrRuby(before, after)
       execute a:before." :e ".DiscoverRubyFileName().a:after
   endfunction
@@ -46,6 +55,14 @@
       redraw!
     endif
   endfunction
+
+  function! SpringToggle()
+    if(&springtoggle == 1)
+			let test#ruby#rspec#executable = 'bundle exec spring rspec'
+    else
+			let test#ruby#rspec#executable = 'rspec'
+    endif
+  endfunc
 
   function! NumberToggle()
     if(&relativenumber == 1)

@@ -5,7 +5,7 @@ call plug#begin('~/.nvim/plugged')
   Plug 'scrooloose/nerdtree'
   "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
-  Plug 'ctrlpvim/ctrlp.vim'
+  "Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tomasr/molokai'
   Plug 'ag.vim'
   Plug 'bling/vim-airline'
@@ -18,9 +18,14 @@ call plug#begin('~/.nvim/plugged')
 
   Plug 'https://github.com/kassio/neoterm.git'
   Plug 'https://github.com/neomake/neomake.git'
-
   Plug 'https://github.com/airblade/vim-gitgutter.git'
+  Plug 'https://github.com/tpope/vim-fugitive.git'
+
   Plug 'janko-m/vim-test'
+  Plug 'elmcast/elm-vim'
+
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 
   " Code Completion"
   Plug 'AndrewRadev/splitjoin.vim'
@@ -35,6 +40,8 @@ call plug#begin('~/.nvim/plugged')
   " JS
   Plug 'kchmck/vim-coffee-script'
   Plug 'isRuslan/vim-es6'
+
+  Plug 'vitalk/vim-simple-todo'
 
 call plug#end()
 

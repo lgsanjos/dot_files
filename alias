@@ -10,13 +10,17 @@ ruby_version () {
 export PS1='\n\n[\033[1;30m\]$(printf "%$(($COLUMNS - 2))s\n" "jobs \j - \t - \d" )\[\033[1;34m\]\u\[\033[0;37m\]@\[\033[0;37m\]\w\[\033[1;32m\] $(ruby_version) | $(parse_git_branch) \[\033[1;37m\]\n-> \[\033[0;37m\]'
 
 export PATH="$PATH:~/dotfiles/func/"
+source ~/dotfiles/func/z.sh
 
 #####  Alias #####
 
 alias g=git
+alias ag='ag --ignore-dir={.bzr,CVS,.git,.hg,.svn,log,logs}'
+alias grep='grep --color --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
-alias sshbt='ssh bellroy-production@10.0.1.31'
-alias sshbb='ssh bellroy-production@10.101.2.20'
+### Trike Apps
+export PATH="$PATH:~/home/.local/bin/hymie"
+alias himye='~/.local/bin/hymie'
 
 alias ag='ag --ignore-dir={.bzr,CVS,.git,.hg,.svn}'
 

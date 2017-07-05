@@ -34,8 +34,15 @@ nnoremap <C-b> :call NumberToggle()<cr>
 " Tab to navigate over tabs
 map <Tab> <C-W>w
 
+"fzf
+map <C-p> :Files<CR>
+map <C-l> :buffers<CR>
+map <C-o> :Tags<CR>
+
 "To add comments
 map ,c :Commentary<CR>
+
+" Save
 map ,w :w<CR>
 
 "to replace line with yank
@@ -43,7 +50,6 @@ map D "_ddkp"
 
 "to close buffer
 map ,q :bd!<cr>
-map ,e :bw!<cr>
 
 "to move buffers
 map zl :bn<CR>
@@ -59,12 +65,14 @@ nmap ,ts :call SwitchRspecOrRuby(":vsp \| ", '')<CR>
 
 "Run rspec:
 
- " by default use spring to run specs
-let test#ruby#rspec#executable = 'spring rspec'
 let test#strategy = 'neovim'
+"let test#ruby#rspec#executable = 'bundle exec spring rspec'
+nmap ,cr :call CreateRspecFromCurrentFile()<CR>
 nmap ,r :TestNearest<CR>
-nmap ,R :TestFile<CR>
+nmap ,a :TestFile<CR>
+nmap ,e :TestLast<CR>
 nmap ,tr :call RunRspecForRubyFile()<CR>
+nmap ,l :call SpringToggle()<CR>
 
 "Search all occurrences
 map ,z :Ag <cword> -s -w --column<CR>

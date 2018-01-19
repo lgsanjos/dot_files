@@ -7,14 +7,11 @@ call plug#begin('~/.nvim/plugged')
 
   "Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tomasr/molokai'
-  Plug 'ag.vim'
   Plug 'bling/vim-airline'
 
   Plug 'tpope/vim-rails'
   Plug 'kchmck/vim-coffee-script'
   Plug 'isRuslan/vim-es6'
-
-  Plug 'JamshedVesuna/vim-markdown-preview'
 
   Plug 'https://github.com/kassio/neoterm.git'
   Plug 'https://github.com/neomake/neomake.git'
@@ -27,10 +24,16 @@ call plug#begin('~/.nvim/plugged')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
 
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'nelstrom/vim-textobj-rubyblock'
+  Plug 'kana/vim-textobj-user'
+
   " Code Completion"
   Plug 'AndrewRadev/splitjoin.vim'
   Plug 'Raimondi/delimitMate', { 'on': [] }
-  Plug 'SirVer/ultisnips', { 'on': [] }
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+
   Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
   Plug 'honza/vim-snippets', { 'on': [] }
   Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
@@ -47,9 +50,9 @@ call plug#end()
 
 source ~/dotfiles/nvim/init
 source ~/dotfiles/nvim/ui
-source ~/dotfiles/nvim/functions
+
+for f in split(glob('~/dotfiles/nvim/functions/*'), '\n')
+    exe 'source' f
+endfor
 source ~/dotfiles/nvim/plugins
 source ~/dotfiles/nvim/maps
-source ~/dotfiles/nvim/statusline
-source ~/dotfiles/vim/rubocop.vim
-

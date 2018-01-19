@@ -75,3 +75,11 @@
   endfunc
 
   autocmd BufNewFile,BufRead *.json set ft=javascript
+
+
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction

@@ -36,8 +36,7 @@ map <Tab> <C-W>w
 
 "fzf
 map <C-p> :Files<CR>
-map <C-l> :buffers<CR>
-map <C-o> :Tags<CR>
+map <C-l> :buffers<CR> map <C-o> :Tags<CR>
 
 "To add comments
 map ,c :Commentary<CR>
@@ -49,14 +48,14 @@ map ,w :w<CR>
 map D "_ddkp"
 
 "to close buffer
-map ,q :bd!<cr>
+map ,q :Bclose<cr>
 
 "to move buffers
 map zl :bn<CR>
 map zh :bp<CR>
 
 "maximize buffers
-map zm <C-W>\|
+map zN <C-W>\|
 map zn <C-W>=
 
 "Switch to test files
@@ -75,17 +74,29 @@ nmap ,tr :call RunRspecForRubyFile()<CR>
 nmap ,l :call SpringToggle()<CR>
 
 "Search all occurrences
-map ,z :Ag <cword> -s -w --column<CR>
+nnoremap <silent> ,ag :Ag <C-R><C-W><CR>
 
 "beutify JSON
 map ,bj :<,'>!python -m json.tool<CR>
 
 :set colorcolumn=100
 
-map zo :vsp \| :find ~/Dropbox/Public/TODO<CR><C-W>r:vertical resize -60<CR><C-W>w
+map zp :vsp \| :find ~/Dropbox/Public/TODO<CR><C-W>r:vertical resize -60<CR><C-W>w
 
 nnoremap Q <nop>
 nnoremap K <nop>
 
-map zg :GitGutterToggle<CR>
+" neomake
+nmap ,nw :lopen<CR>      " open location window
 
+" For global replace
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
+" multi cursor
+let g:multi_cursor_use_default_mapping=0
+
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-P>'
+let g:multi_cursor_skip_key='<C-X>'
+let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_start_key=',R'

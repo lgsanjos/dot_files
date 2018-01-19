@@ -23,7 +23,6 @@
     cpa = cherry-pick --abort
     sfc = show --pretty="format:" --name-only # it stands for: show files changed, usage g sfc <hash>
     rma = !git ls-files --deleted -z | xargs -0 git rm
-    dc = diff --cached
 
   # This giant line is a nice formatted log, like this:
   # hash (time) <user> -(branches which this commit is the head) commit message

@@ -1,4 +1,66 @@
 "vim:syntax=vim
+function! MyFoldText() " {{{
+    let line = getline(v:foldstart)
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 3
+    let foldedlinecount = v:foldend - v:foldstart
+
+    " expand tabs into spaces
+    let onetab = strpart('          ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+endfunction " }}}
+
+function! NeatFoldText()
+    let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+    let lines_count = v:foldend - v:foldstart + 1
+    let lines_count_text = '(' . printf("%7s", lines_count . ' lines') . ')'
+    let foldchar = matchstr(&fillchars, 'fold:\zs.')
+    let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
+    let foldtextend = repeat(foldchar, 8)
+    let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+    return foldtextstart . lines_count_text . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
+endfunction
+
+function! MyFoldText2()
+  let line = getline(v:foldstart)
+  if match( line, '^[ \t]*\(\/\*\|\/\/\)[*/\\]*[ \t]*$' ) == 0
+    let initial = substitute( line, '^\([ \t]\)*\(\/\*\|\/\/\)\(.*\)', '\1\2', '' )
+    let linenum = v:foldstart + 1
+    while linenum < v:foldend
+      let line = getline( linenum )
+      let comment_content = substitute( line, '^\([ \t\/\*]*\)\(.*\)$', '\2', 'g' )
+      if comment_content != ''
+        break
+      endif
+      let linenum = linenum + 1
+    endwhile
+    let sub = initial . ' ' . comment_content
+  else
+    let sub = line
+    let startbrace = substitute( line, '^.*{[ \t]*$', '{', 'g')
+    if startbrace == '{'
+      let line = getline(v:foldend)
+      let endbrace = substitute( line, '^[ \t]*}\(.*\)$', '}', 'g')
+      if endbrace == '}'
+        let sub = sub.substitute( line, '^[ \t]*}\(.*\)$', '...}\1', 'g')
+      endif
+    endif
+  endif
+  let n = v:foldend - v:foldstart + 1
+  let info = " " . n . " lines"
+  let sub = sub . "                                                                                                                  "
+  let num_w = getwinvar( 0, '&number' ) * getwinvar( 0, '&numberwidth' )
+  let fold_w = getwinvar( 0, '&foldcolumn' )
+  let sub = strpart( sub, 0, winwidth(0) - strlen( info ) - num_w - fold_w - 1 )
+  return sub . info
+endfunction
+
+" set foldtext=NeatFoldText()
 
 let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --ignore-dir=public/assets --ignore-dir=vendor'
 
@@ -8,7 +70,6 @@ command! -bang -nargs=* Ag
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
 " Customize fzf colors to match your color scheme
-
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -58,6 +119,7 @@ function! NERDTreeHighlightFile(extension, fg, bg, mod)
     exec 'autocmd filetype nerdtree highlight ' . a:extension . ' ctermbg=' . a:bg . ' ctermfg=' . a:fg . ' cterm=' . a:mod
 endfunction
 
+
 call NERDTreeHighlightFile('css',         '13',   'NONE',  'NONE')
 call NERDTreeHighlightFile('feature',     '41',   'NONE',  'NONE')
 call NERDTreeHighlightFile('gradle',      '222',  'NONE',  'NONE')
@@ -81,10 +143,6 @@ let NERDTreeWinSize = 40
 let NERDTreeMinimalUI = 1
 let NERDTreeCascadeOpenSingleChildDir = 1
 
-let g:UltiSnipsExpandTrigger='<C-f>'
-let g:UltiSnipsJumpForwardTrigger='<Tab>'
-let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
-
 " YouCompleteMe"
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -97,17 +155,12 @@ let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 
-" Rainbow parentheses"
-"autocmd Syntax * RainbowParenthesesLoadRound
-"autocmd Syntax * RainbowParenthesesLoadSquare
-"autocmd Syntax * RainbowParenthesesLoadBraces
-
 " airline
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 
 " Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#fnamemod = ':f'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " markdown preview

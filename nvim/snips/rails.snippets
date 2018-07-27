@@ -1,0 +1,16 @@
+snippet etr "etr"
+expect(${1:variable}).to receive(:${2:method_name})
+endsnippet
+
+snippet etrw "etrw"
+expect(${1:variable})
+  .to receive(:${2:method_name})
+	.with(${3:arguments})
+endsnippet
+
+snippet etrwr "etrwr"
+expect(${1:variable})
+  .to receive(:${2:method_name})
+	.with(${3:arguments})
+	.and_return(${4:return})
+endsnippet

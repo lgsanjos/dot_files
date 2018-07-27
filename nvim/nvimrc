@@ -1,22 +1,26 @@
 call plug#begin('~/.nvim/plugged')
+  Plug 'SirVer/ultisnips'
+
   Plug 'junegunn/vim-easy-align'
   Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-  "Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+  Plug 'honza/vim-snippets'
   Plug 'scrooloose/nerdtree'
-  "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+  " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
   "Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tomasr/molokai'
   Plug 'bling/vim-airline'
 
-  Plug 'tpope/vim-rails'
   Plug 'kchmck/vim-coffee-script'
   Plug 'isRuslan/vim-es6'
+  " Plug 'majutsushi/tagbar'
 
   Plug 'https://github.com/kassio/neoterm.git'
   Plug 'https://github.com/neomake/neomake.git'
   Plug 'https://github.com/airblade/vim-gitgutter.git'
   Plug 'https://github.com/tpope/vim-fugitive.git'
+
+  Plug 'gorkunov/smartgf.vim'
 
   Plug 'janko-m/vim-test'
   Plug 'elmcast/elm-vim'
@@ -29,22 +33,38 @@ call plug#begin('~/.nvim/plugged')
   Plug 'kana/vim-textobj-user'
 
   " Code Completion"
-  Plug 'AndrewRadev/splitjoin.vim'
-  Plug 'Raimondi/delimitMate', { 'on': [] }
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
+  Plug 'AndrewRadev/splitjoin.vim' " to be reviewed
+  Plug 'Raimondi/delimitMate', { 'on': [] } " TBR
 
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.sh', 'on': [] }
-  Plug 'honza/vim-snippets', { 'on': [] }
-  Plug 'tpope/vim-commentary', { 'on': '<Plug>Commentary' }
+  "Ruby
+  Plug 'AndrewRadev/splitjoin.vim'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-abolish'
+  Plug 'tpope/vim-rails'
+  Plug 'honza/vim-snippets'
+  Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-dispatch'
+  Plug 'thoughtbot/vim-rspec'
+  Plug 'radenling/vim-dispatch-neovim'
+  "Plug 'vim-utils/vim-ruby-fold'
+  "
+
+  " Needs to be fixed for rspec
+  "Plug 'sentientmonkey/vim-flog'
+
   " JS
   Plug 'kchmck/vim-coffee-script'
   Plug 'isRuslan/vim-es6'
 
-  Plug 'vitalk/vim-simple-todo'
+  "Plug 'tpope/vim-fireplace'
+  "Plug 'tpope/vim-classpath'
+  "Plug 'guns/vim-clojure-static'
+  "Plug 'vim-scripts/paredit.vim'
+
+  "Plug 'vitalk/vim-simple-todo'
 
 call plug#end()
 

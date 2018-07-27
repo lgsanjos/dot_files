@@ -1,0 +1,20 @@
+snippet etr "expect to receive"
+expect(${1:variable}).to receive(:${2:method_name})
+endsnippet
+
+snippet etrw "extect to receive with"
+expect($3)
+  .to receive(:$2)
+	.with($0)
+endsnippet
+
+snippet etrwa "expect to receive with and_return "
+expect(${1:variable})
+  .to receive(:${2:method_name})
+	.with(${3:arguments})
+	.and_return(${4:return})
+endsnippet
+
+snippet lid "let instance_double"
+let(:${1:name}) { instance_double(${2:class_name}) }
+endsnippet

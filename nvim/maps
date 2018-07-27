@@ -1,6 +1,50 @@
 "vim:syntax=vim
 
 set backspace=indent,eol,start
+let g:flog_enable=0
+
+nmap fj ]m
+nmap fk [m
+
+" Fold ruby methods by default
+" let ruby_fold=100
+"let g:ruby_fold_lines_limit = 200
+
+" :hi Folded guibg=black ctermfg=white ctermbg=darkgrey
+
+set splitbelow
+set splitright
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-u>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-m>"
+
+let g:UltiSnipsSnippetsDir = "/Users/sanjos/dotfiles/nvim/snips"
+let g:UltiSnipsSnippetDirectories=["/Users/sanjos/dotfiles/nvim/snips", "UltiSnips"]
+let g:UltiSnipsEditSplit= "context"
+
+let test#ruby#rspec#options = {
+  \ 'nearest': '--backtrace',
+  \ 'file':    '--format documentation',
+  \ 'suite':   '--tag ~slow',
+\}
+
+function! SplitStrategy(cmd)
+  vsp | e 999 | call termopen(a:cmd)
+endfunction
+let g:test#custom_strategies = {'terminal_split': function('SplitStrategy')}
+
+let test#ruby#rspec#executable = 'time bundle exec rspec'
+
+let g:test#preserve_screen = 1
+let g:test#strategy = 'terminal_split'
+
+
+nmap ,r :TestNearest<CR>
+nmap ,a :TestFile<CR>
+nmap ,e :TestLast<CR>
+nmap ,tr :call RunRspecForRubyFile()<CR>
 
 " To screw myself up
 nmap <up> <nop>
@@ -34,6 +78,9 @@ nnoremap <C-b> :call NumberToggle()<cr>
 " Tab to navigate over tabs
 map <Tab> <C-W>w
 
+nmap <C-c> :put=expand('%:t:r')<CR>
+
+
 "fzf
 map <C-p> :Files<CR>
 map <C-l> :buffers<CR> map <C-o> :Tags<CR>
@@ -62,15 +109,7 @@ map zn <C-W>=
 nmap ,tt :call SwitchRspecOrRuby('', '')<CR>
 nmap ,ts :call SwitchRspecOrRuby(":vsp \| ", '')<CR>
 
-"Run rspec:
-
-let test#strategy = 'neovim'
-"let test#ruby#rspec#executable = 'bundle exec spring rspec'
 nmap ,cr :call CreateRspecFromCurrentFile()<CR>
-nmap ,r :TestNearest<CR>
-nmap ,a :TestFile<CR>
-nmap ,e :TestLast<CR>
-nmap ,tr :call RunRspecForRubyFile()<CR>
 nmap ,l :call SpringToggle()<CR>
 
 "Search all occurrences
@@ -95,8 +134,8 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 " multi cursor
 let g:multi_cursor_use_default_mapping=0
 
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-P>'
-let g:multi_cursor_skip_key='<C-X>'
-let g:multi_cursor_quit_key='<Esc>'
-let g:multi_cursor_start_key=',R'
+"let g:multi_cursor_next_key='<C-]>'
+"let g:multi_cursor_prev_key='<C-[>'
+"let g:multi_cursor_skip_key='<C-s>'
+"let g:multi_cursor_quit_key='<Esc>'
+"let g:multi_cursor_start_key='<C-|>'

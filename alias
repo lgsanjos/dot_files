@@ -1,40 +1,17 @@
 
-parse_git_branch() {
- git branch 2> /dev/null | grep ^* | awk '{print $2}'
-}
+# Store 10k history entries
+export HISTSIZE=10000
 
-ruby_version () {
-  ruby -v | awk '{print $2}'
-}
+for f in ~/dotfiles/private/*; do
+  source $f;
+done
 
-export PS1='\n\n[\033[1;30m\]$(printf "%$(($COLUMNS - 2))s\n" "jobs \j - \t - \d" )\[\033[1;34m\]\u\[\033[0;37m\]@\[\033[0;37m\]\w\[\033[1;32m\] $(ruby_version) | $(parse_git_branch) \[\033[1;37m\]\n-> \[\033[0;37m\]'
-
-export PATH="$PATH:~/dotfiles/func/"
-source ~/dotfiles/func/z.sh
-
-#####  Alias #####
+#####  git #####
 
 alias g=git
 alias ag='ag --ignore-dir={.bzr,CVS,.git,.hg,.svn,log,logs}'
 alias grep='grep --color --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 
-### Trike Apps
-export PATH="$PATH:~/home/.local/bin/hymie"
-alias himye='~/.local/bin/hymie'
-
-alias ag='ag --ignore-dir={.bzr,CVS,.git,.hg,.svn}'
-
-alias blog='cd ~/dev/m/lgsanjos'
-alias ativos='cd ~/dev/ativos'
-alias assets='cd ~/dev/assets'
-alias trike='cd ~/dev/trike'
-alias bell='cd ~/dev/trike/bellroy'
-alias logis='cd ~/dev/trike/logistics'
-
-alias grep='grep --color --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
-
 ##### calendar #####
 alias calt='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e)" -e "^$(date +%e)"'
 
-# Store 10k history entries
-export HISTSIZE=10000

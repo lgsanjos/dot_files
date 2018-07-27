@@ -1,0 +1,4 @@
+export PATH="$PATH:~/dotfiles/func/"
+source ~/dotfiles/func/z.sh
+source ~/dotfiles/PS_style
+source ~/dotfiles/alias

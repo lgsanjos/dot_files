@@ -1,5 +1,6 @@
 " vim: filetype=vim
 
+:set colorcolumn=100
 " Sets the colorscheme
 syntax enable
 set background=dark

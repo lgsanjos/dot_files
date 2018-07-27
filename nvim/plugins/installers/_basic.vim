@@ -23,6 +23,7 @@ Plug 'gorkunov/smartgf.vim'
 
 " UI Theme
 Plug 'tomasr/molokai'
+Plug 'jacoborus/tender'
 
 " UI header
 Plug 'bling/vim-airline'

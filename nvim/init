@@ -40,7 +40,7 @@ set expandtab
 " Auto indentation for programming =)
 set ai
 
-colorscheme molokai
+colorscheme tender
 set background=dark
 set t_Co=256
 hi Search ctermbg=LightBlue

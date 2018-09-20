@@ -1,5 +1,23 @@
 "vim:syntax=vim
 
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby compiler ruby
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+if !exists('g:neocomplete#sources#omni#force_omni_input_patterns')
+    let g:neocomplete#sources#omni#force_omni_input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.ruby = '[^.[:digit:] *\t]\%(\.\|->\)'
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 set backspace=indent,eol,start
 set encoding=utf-8
 set mouse=a
@@ -43,7 +61,6 @@ set ai
 colorscheme tender
 set background=dark
 set t_Co=256
-hi Search ctermbg=LightBlue
 set showcmd
 set autoindent
 set foldenable

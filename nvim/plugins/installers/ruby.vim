@@ -11,6 +11,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-dispatch'
 Plug 'thoughtbot/vim-rspec'
 Plug 'radenling/vim-dispatch-neovim'
+Plug 'ecomba/vim-ruby-refactoring'
 
 " Makes file navigation too slow
 "Plug 'sentientmonkey/vim-flog'

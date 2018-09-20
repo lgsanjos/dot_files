@@ -7,4 +7,9 @@ for f in split(glob('~/dotfiles/nvim/functions/*'), '\n')
     exe 'source' f
 endfor
 
+" Hack to overload plugins
+hi Search ctermbg=Black
+hi Search ctermfg=235
+hi Search cterm=bold
+
 source ~/dotfiles/nvim/maps

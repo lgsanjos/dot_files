@@ -1,14 +1,14 @@
-snippet etr "etr"
+snippet etr "Expect to Receive"
 expect(${1:variable}).to receive(:${2:method_name})
 endsnippet
 
-snippet etrw "etrw"
+snippet etrw "Expect To Receive With"
 expect(${1:variable})
   .to receive(:${2:method_name})
 	.with(${3:arguments})
 endsnippet
 
-snippet etrwr "etrwr"
+snippet etrwr "Expect To Receive With and Return"
 expect(${1:variable})
   .to receive(:${2:method_name})
 	.with(${3:arguments})

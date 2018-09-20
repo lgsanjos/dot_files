@@ -2,11 +2,17 @@
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-" Autocomplete 
+" Autocomplete
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " Refactoring
 Plug 'terryma/vim-multiple-cursors'
+
+" Identation mark
+Plug 'Yggdroot/indentLine'
+
+" Navigation in file
+Plug 'easymotion/vim-easymotion'
 
 " neovim spec runner
 Plug 'https://github.com/kassio/neoterm.git'
@@ -31,6 +37,8 @@ Plug 'bling/vim-airline'
 " UI show git status
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 
+" Metrics
+Plug 'git://github.com/wakatime/vim-wakatime.git'
 
 
 

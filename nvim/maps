@@ -10,11 +10,27 @@ nmap <down> <nop>
 nmap <left> <nop>
 nmap <right> <nop>
 
-map <C-j> 10j
-map <C-k> 10k
+map <c-j> 10j
+map <c-k> 10k
 
 nmap <CR> :nohlsearch<CR>
 nmap ,, :nohlsearch<CR>
+
+" Bookmarks
+
+nnoremap <F13> mQ
+nnoremap <F14> mW
+nnoremap <F15> mE
+nnoremap <F16> mR
+nnoremap <F17> mR
+
+nnoremap <F1> 'Q
+nnoremap <F2> 'W
+nnoremap <F3> 'E
+nnoremap <F4> 'R
+nnoremap <F5> 'T
+
+
 
 " paste replacing current word"
 nmap <silent> cp "_cw<C-R>"<Esc>
@@ -24,7 +40,7 @@ nmap <silent> cp "_cw<C-R>"<Esc>
 "nnoremap k gk
 
 " Relative number
-nnoremap <C-b> :call NumberToggle()<cr>
+" nnoremap <C-b> :call NumberToggle()<cr>
 
 " Tab to navigate over tabs
 map <Tab> <C-W>w

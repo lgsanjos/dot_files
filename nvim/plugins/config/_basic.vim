@@ -103,3 +103,14 @@ let g:airline#extensions#tabline#fnamemod = ':f'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 let g:airline_theme = 'tender'
+
+" FZF
+function! s:fzf_statusline()
+  " Override statusline as you like
+  highlight fzf1 ctermfg=161 ctermbg=251
+  highlight fzf2 ctermfg=23 ctermbg=251
+  highlight fzf3 ctermfg=237 ctermbg=251
+  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+endfunction
+
+autocmd! User FzfStatusLine call <SID>fzf_statusline()

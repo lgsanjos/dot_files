@@ -12,6 +12,10 @@ map ,c :Commentary<CR>
 " Search all occurrences (AG)
 nnoremap <silent> ,ag :Ag <C-R><C-W><CR>
 
+"Easymotion"
+nmap S <Plug>(easymotion-overwin-f)
+nmap s <Plug>(easymotion-overwin-f2)
+
 " For global replace
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
@@ -25,4 +29,7 @@ let g:multi_cursor_use_default_mapping=0
 "let g:multi_cursor_start_key='<C-|>'
 
 " neomake
-nmap ,nw :lopen<CR>      " open location window
+nmap ,nw :lopen<CR> " open location
+
+vnoremap <Leader>2 :TREPLSendSelection
+nnoremap <Leader>2 :TREPLSendLine

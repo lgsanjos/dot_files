@@ -2,7 +2,7 @@
 
 " Sets the colorscheme
 syntax enable
-set background=dark
+set background=white
 
 " set the space from the current line when scrolling
 set scrolloff=3

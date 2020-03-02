@@ -6,6 +6,14 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby compiler ruby
 
+" For REPL
+
+" Providers
+let g:python_host_prog  = '/usr/local/bin/python'  " Python 2
+let g:python3_host_prog = '/usr/local/bin/python3'  " Python 3
+
+let g:ruby_host_prog = 'rvm current do neovim-ruby-host'
+
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
@@ -41,7 +49,10 @@ nnoremap ,s :%s/\s\+$//e<CR>
 " Allow copy to clipboard
 set clipboard=unnamed
 
-" duh
+set cursorline
+set cursorcolumn
+
+" Dont create backup file
 set nobackup
 set noswapfile
 
@@ -55,10 +66,10 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" Auto indentation for programming =)
+" Auto indentation for programming
 set ai
 
-colorscheme tender
+colorscheme gruvbox
 set background=dark
 set t_Co=256
 set showcmd

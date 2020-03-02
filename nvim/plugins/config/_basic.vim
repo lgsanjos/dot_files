@@ -1,12 +1,12 @@
 " Snipets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-u>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-m>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsListSnippets="<c-u>"
+" let g:UltiSnipsJumpForwardTrigger="<c-n>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-m>"
 
-let g:UltiSnipsSnippetsDir = "/Users/sanjos/dotfiles/nvim/snips"
-let g:UltiSnipsSnippetDirectories=["/Users/sanjos/dotfiles/nvim/snips", "UltiSnips"]
-let g:UltiSnipsEditSplit= "context"
+"let g:UltiSnipsSnippetsDir = "/Users/sanjos/dotfiles/nvim/snips"
+"let g:UltiSnipsSnippetDirectories=["/Users/sanjos/dotfiles/nvim/snips", "UltiSnips"]
+"let g:UltiSnipsEditSplit= "context"
 
 let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --ignore-dir=public/assets --ignore-dir=vendor'
 
@@ -29,6 +29,10 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+" Easymotion
+let g:EasyMotion_smartcase = 1 " Turn on case-insensitive feature
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
@@ -62,7 +66,7 @@ endif
 
 function! NERDTreeHighlightFile(extension, fg, bg, mod)
   exec 'autocmd filetype nerdtree syn match ' . a:extension . ' #^\s\+.*' . a:extension . '\*\?$#'
-    exec 'autocmd filetype nerdtree highlight ' . a:extension . ' ctermbg=' . a:bg . ' ctermfg=' . a:fg . ' cterm=' . a:mod
+  exec 'autocmd filetype nerdtree highlight ' . a:extension . ' ctermbg=' . a:bg . ' ctermfg=' . a:fg . ' cterm=' . a:mod
 endfunction
 
 
@@ -90,9 +94,9 @@ let NERDTreeMinimalUI = 1
 let NERDTreeCascadeOpenSingleChildDir = 1
 
 " YouCompleteMe"
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 
 " airline
 " Enable the list of buffers
@@ -102,7 +106,15 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':f'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-let g:airline_theme = 'tender'
+let g:airline_theme = 'gruvbox'
+
+" Gitgutter 
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+
+set statusline+=%{GitStatus()}
 
 " FZF
 function! s:fzf_statusline()
@@ -114,3 +126,36 @@ function! s:fzf_statusline()
 endfunction
 
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
+
+" SmartGF
+
+"Key for running smartpaigf with all filters (ft/comments/def)
+"default is 'gf'
+let g:smartgf_key = 'gf'
+
+"Key for running smartpaigf without filters
+"default is 'gF'
+let g:smartgf_no_filter_key = 'gF'
+
+" apply the default mappings (activated by default):
+let g:smartgf_create_default_mappings = 1
+
+"Enable search with ruby gems from Gemfile
+"default is 1
+let g:smartgf_enable_gems_search = 1
+
+"Enable auto-refreshing ctags file on window focus (works only with GUI)
+"default is 1
+let g:smartgf_auto_refresh_ctags = 1
+
+"Max entries count to display (search results dialog)
+"default is 9
+let g:smartgf_max_entries_per_page = 9
+
+"Min space between text and file path in the search results list
+"default is 5
+let g:smartgf_divider_width = 5
+
+"Extensions to try for filenames which leave it off (will be tried in order)
+" Default is as below
+let g:smartgf_extensions = ['.ls', '.coffee', '.js']

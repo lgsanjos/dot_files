@@ -15,4 +15,3 @@ let test#ruby#rspec#executable = 'time bundle exec rspec'
 
 let g:test#preserve_screen = 1
 let g:test#strategy = 'terminal_split'
-

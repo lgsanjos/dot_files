@@ -1,3 +1,4 @@
+source ~/dotfiles/nvim/plug.vim
 source ~/dotfiles/nvim/plugins/init.vim
 
 source ~/dotfiles/nvim/init
@@ -8,8 +9,10 @@ for f in split(glob('~/dotfiles/nvim/functions/*'), '\n')
 endfor
 
 " Hack to overload plugins
-hi Search ctermbg=Black
+hi Search ctermbg=8
 hi Search ctermfg=235
 hi Search cterm=bold
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 source ~/dotfiles/nvim/maps

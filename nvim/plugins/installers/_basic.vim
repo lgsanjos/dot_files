@@ -1,14 +1,16 @@
 " Snipets
 "Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 "Plug 'kana/vim-textobj-user'
 
+" ulti snipets
+Plug 'honza/vim-snippets'
 
 " Color theme
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Autocomplete
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " Refactoring
 " Plug 'terryma/vim-multiple-cursors'
@@ -47,7 +49,7 @@ Plug 'bling/vim-airline'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 
 " Metrics
-Plug 'git://github.com/wakatime/vim-wakatime.git'
+" Plug 'git://github.com/wakatime/vim-wakatime.git'
 
 " Might not be using
 Plug 'junegunn/vim-easy-align'
@@ -63,9 +65,9 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'Raimondi/delimitMate', { 'on': [] } " TBR
 
 " Denite.nvim
-Plug 'Shougo/denite.nvim'
+" Plug 'Shougo/denite.nvim'
 
 " coc - Language server
-Plug 'Shougo/neoinclude.vim'
-Plug 'jsfaint/coc-neoinclude'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" Plug 'Shougo/neoinclude.vim'
+" Plug 'jsfaint/coc-neoinclude'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}

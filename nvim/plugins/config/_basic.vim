@@ -1,14 +1,14 @@
 " Snipets
-"let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsListSnippets="<c-u>"
-" let g:UltiSnipsJumpForwardTrigger="<c-n>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-m>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-m>"
 
 "let g:UltiSnipsSnippetsDir = "/Users/sanjos/dotfiles/nvim/snips"
 "let g:UltiSnipsSnippetDirectories=["/Users/sanjos/dotfiles/nvim/snips", "UltiSnips"]
-"let g:UltiSnipsEditSplit= "context"
+let g:UltiSnipsEditSplit= "context"
 
-let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --ignore-dir=public/assets --ignore-dir=vendor'
+let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --ignore-dir=public/assets --ignore-dir=vendor --ignore-dir=sorbet'
 
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
@@ -59,7 +59,7 @@ let g:ctrlp_custom_ignore = {
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
  set grepprg=ag\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=.git\ --ignore-dir=public/assets\
-  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor --depth 100 -S -g "" --ignore-dir=tmp --ignore-dir=.git --ignore-dir=public/assets'
+  let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor --depth 100 -S -g "" --ignore-dir=sorbet/ --ignore-dir=tmp --ignore-dir=.git --ignore-dir=public/assets'
 endif
 
 " NerdTree

@@ -57,8 +57,8 @@ map zl :bn<CR>
 map zh :bp<CR>
 
 " maximize buffers
-map zN <C-W>\|
-map zn <C-W>=
+" map zN <C-W>\|
+" map zn <C-W>=
 
 nnoremap Q <nop>
 nnoremap K <nop>

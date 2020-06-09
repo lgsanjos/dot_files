@@ -9,8 +9,8 @@ autocmd FileType ruby compiler ruby
 " For REPL
 
 " Providers
-let g:python_host_prog  = '/usr/local/bin/python'  " Python 2
-let g:python3_host_prog = '/usr/local/bin/python3'  " Python 3
+let g:python_host_prog  = '/usr/local/bin/python2'  " Python 2
+let g:python3_host_prog = '/usr/bin/python3'  " Python 3
 
 let g:ruby_host_prog = 'rvm current do neovim-ruby-host'
 

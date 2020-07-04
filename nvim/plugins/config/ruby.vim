@@ -7,7 +7,8 @@ let test#ruby#rspec#options = {
 \}
 
 function! SplitStrategy(cmd)
-  vsp | e 999 | call termopen(a:cmd)
+  "vsp | e 999 | call termopen(a:cmd)
+  vert botright new | call termopen(a:cmd)
 endfunction
 let g:test#custom_strategies = {'terminal_split': function('SplitStrategy')}
 

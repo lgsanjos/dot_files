@@ -33,3 +33,6 @@ nmap ,nw :lopen<CR> " open location
 
 vnoremap <Leader>2 :TREPLSendSelection
 nnoremap <Leader>2 :TREPLSendLine
+
+vmap ,f  <Plug>(coc-format-selected)
+nmap ,f  <Plug>(coc-format-selected)

@@ -147,7 +147,9 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 let g:coc_global_extensions =
 \ [ 'coc-json'
 \ , 'coc-git'
+\ , 'coc-solargraph'
 \ , 'coc-lists'
+\ , 'coc-prettier'
 \ , 'coc-snippets'
 \ , 'coc-pairs'
 \ , 'coc-tsserver'
@@ -156,7 +158,6 @@ let g:coc_global_extensions =
 \ , 'coc-python'
 \ , 'coc-emoji'
 \ , 'coc-yaml'
-\ , 'coc-solargraph'
 \ , 'coc-python'
 \ ]
 

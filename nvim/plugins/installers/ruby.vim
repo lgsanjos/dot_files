@@ -15,5 +15,7 @@ Plug 'ecomba/vim-ruby-refactoring'
 
 Plug 'rlue/vim-fold-rspec'
 
+Plug 'Shougo/deoplete'
+
 " Makes file navigation too slow
 "Plug 'sentientmonkey/vim-flog'

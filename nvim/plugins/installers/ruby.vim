@@ -15,7 +15,14 @@ Plug 'ecomba/vim-ruby-refactoring'
 
 Plug 'rlue/vim-fold-rspec'
 
-Plug 'Shougo/deoplete'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 " Makes file navigation too slow
 "Plug 'sentientmonkey/vim-flog'

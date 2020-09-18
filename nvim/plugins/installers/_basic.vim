@@ -71,4 +71,6 @@ Plug 'Raimondi/delimitMate', { 'on': [] } " TBR
 " Plug 'jsfaint/coc-neoinclude'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
+
+Plug 'yuttie/comfortable-motion.vim'

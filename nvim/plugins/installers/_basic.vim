@@ -1,6 +1,5 @@
 " Snipets
 "Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
 "Plug 'kana/vim-textobj-user'
 
 " ulti snipets

@@ -19,6 +19,7 @@ plugins=(
   rake
   rvm
   ruby
+  nvm
   z
 )
 

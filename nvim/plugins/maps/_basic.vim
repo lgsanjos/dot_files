@@ -37,6 +37,7 @@ nnoremap <Leader>2 :TREPLSendLine
 vmap ,f  <Plug>(coc-format-selected)
 nmap ,f  <Plug>(coc-format-selected)
 
-nnoremap <silent> ,v :call CocAction('doHover')<CR>
+nnoremap <silent> ,d :call CocAction('doHover')<CR>
 nmap ,do <Plug>(coc-codeaction)
-nmap ,rn <Plug>(coc-rename)
+nmap ,ds <Plug>(coc-codeaction-selected)
+nmap ,dr <Plug>(coc-rename)

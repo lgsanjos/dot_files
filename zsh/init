@@ -19,10 +19,11 @@ plugins=(
   git
   bundler
   osx
-  rake
   rvm
+  rails
+  zsh-nvm
+  rake
   ruby
-  nvm
   z
 )
 

@@ -2,6 +2,7 @@ source ~/dotfiles/nvim/plug.vim
 source ~/dotfiles/nvim/plugins/init.vim
 
 source ~/dotfiles/nvim/init
+source ~/dotfiles/nvim/folding.vim
 source ~/dotfiles/nvim/ui
 
 for f in split(glob('~/dotfiles/nvim/functions/*'), '\n')

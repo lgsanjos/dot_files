@@ -73,4 +73,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Plug 'ryanoasis/vim-devicons'
 
+Plug 'codota/tabnine-vim'
+
 Plug 'yuttie/comfortable-motion.vim'

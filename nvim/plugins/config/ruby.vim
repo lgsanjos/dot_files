@@ -14,10 +14,6 @@ let g:test#custom_strategies = {'terminal_split': function('SplitStrategy')}
 
 let test#ruby#rspec#executable = 'time bundle exec rspec'
 
-if executable('spring')
-  let test#ruby#rspec#executable = 'time spring rspec'
-endif
-
 let g:test#strategy = 'terminal_split'
 
 let g:test#preserve_screen = 1

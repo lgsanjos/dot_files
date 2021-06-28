@@ -15,9 +15,6 @@ nmap <down> <nop>
 nmap <left> <nop>
 nmap <right> <nop>
 
-"map <c-j> 10j
-"map <c-k> 10k
-
 nmap <CR> :nohlsearch<CR>
 nmap ,, :nohlsearch<CR>
 
@@ -58,8 +55,8 @@ map D "_ddkp"
 map ,q :Bclose!<cr>
 
 " to move buffers
-map zl :bn<CR>
-map zh :bp<CR>
+map z; :bn<CR>
+map zj :bp<CR>
 
 " maximize buffers
 " map zN <C-W>\|

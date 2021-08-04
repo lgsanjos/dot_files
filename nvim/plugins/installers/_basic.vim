@@ -44,10 +44,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " File navigation - gf
-Plug 'gorkunov/smartgf.vim'
+" Plug 'gorkunov/smartgf.vim'
 
-" UI Theme
-" Plug 'tomasr/molokai'
+" UI Theme Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 " Plug 'jacoborus/tender'
 

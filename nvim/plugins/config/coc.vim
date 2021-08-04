@@ -236,6 +236,19 @@ let g:coc_user_config =
 \         }
 \       }
 \     },
+\     "purescript": {
+\       "command": "purescript-language-server",
+\       "args": ["--stdio"],
+\       "filetypes": ["purescript", "purs"],
+\       "trace.server": "off",
+\       "rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"],
+\       "settings": {
+\         "purescript": {
+\           "addSpagoSources": v:true,
+\           "addNpmPath": v:true
+\         }
+\       }
+\     },
 \     'bash': {
 \           'command'         : 'bash-language-server'
 \         , 'args'            : ['start']

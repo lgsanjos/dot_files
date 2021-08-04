@@ -44,6 +44,7 @@ endif
 
 let g:neomake_open_list = 2
 
+autocmd! BufWritePost,BufEnter *.{hs,haskell} :NeomakeDisableBuffer
 
 " Snipets
 let g:UltiSnipsExpandTrigger="<tab>"

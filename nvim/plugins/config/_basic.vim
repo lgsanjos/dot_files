@@ -25,6 +25,16 @@ highlight TelescopeMatching       guifg=blue
 " Used for the prompt prefix
 highlight TelescopePromptPrefix   guifg=red
 
+" Theme
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+syntax enable
+colorscheme OceanicNext
+
+let g:airline_theme='oceanicnext'
+
 " NeoMake
 
 function! MyOnBattery()
@@ -154,7 +164,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':f'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
-let g:airline_theme = 'gruvbox'
+" let g:airline_theme = 'gruvbox'
 
 " Gitgutter 
 function! GitStatus()

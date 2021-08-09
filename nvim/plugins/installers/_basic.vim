@@ -8,6 +8,10 @@ Plug 'BurntSushi/ripgrep' " (finder)
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
 
+
+" Syntex highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
 " Snipets
 "Plug 'SirVer/ultisnips'
 "Plug 'kana/vim-textobj-user'
@@ -16,7 +20,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'honza/vim-snippets'
 
 " Color theme
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'mhartington/oceanic-next'
 
 " Autocomplete
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
@@ -82,6 +87,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Plug 'ryanoasis/vim-devicons'
 
-Plug 'codota/tabnine-vim'
+" Plug 'codota/tabnine-vim'
 
 Plug 'yuttie/comfortable-motion.vim'

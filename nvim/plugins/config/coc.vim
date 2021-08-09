@@ -91,9 +91,13 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current line.
-nmap <leader>ac  <Plug>(coc-codeaction)
+nmap ,ca  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap ,cn  <Plug>(coc-fix-current)
+nmap ,ck <Plug>(coc-diagnostic-next-error)
+nmap ,cl <Plug>(coc-diagnostic-prev-error)
+nmap ,cr <Plug>(coc-rename)
+nmap ,ct <Plug>(coc-refactor)
 
 " Introduce function text object
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.

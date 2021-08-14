@@ -4,7 +4,7 @@ map <C-h> :NERDTreeFind<CR>
 
 "fzf
 map <C-p> :Files<CR>
-map <C-l> :buffers<CR> map <C-o> :Tags<CR>
+" map <C-l> :buffers<CR> map <C-o> :Tags<CR>
 
 "To add comments
 map ,c :Commentary<CR>

@@ -84,6 +84,7 @@ Plug 'Raimondi/delimitMate', { 'on': [] } " TBR
 " Plug 'Shougo/neoinclude.vim'
 " Plug 'jsfaint/coc-neoinclude'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf'
 
 " Plug 'ryanoasis/vim-devicons'
 

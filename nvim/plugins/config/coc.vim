@@ -160,6 +160,7 @@ let g:coc_global_extensions =
 \ , 'coc-emoji'
 \ , 'coc-yaml'
 \ , 'coc-python'
+\ , 'coc-tailwindcss'
 \ ]
 
 " Use <C-l> for trigger snippet expand.

@@ -253,4 +253,8 @@ let g:coc_user_config =
 \     , 'topRemovedSign.hlGroup'   : 'GitGutterDelete'
 \     , 'changeRemovedSign.hlGroup': 'GitGutterChangeDelete'
 \     }
+\ ,  "coc.snippets.priority": 1
+\ ,  "coc.snippets.ultisnips.enable": v:true
+\ ,  "coc.snippets.ultisnips.directories": ["UltiSnips", "snippets"]
+\ ,  "coc.snippets.userSnippetsDirectory": "~/dotfiles/nvim/snips"
 \ }

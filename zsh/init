@@ -25,8 +25,12 @@ plugins=(
   rake
   ruby
   tmux
+  fzf
   z
+  zsh-completions
 )
+
+autoload -U compinit && compinit
 
 load-nvmrc() {
   local node_version="$(nvm version)"

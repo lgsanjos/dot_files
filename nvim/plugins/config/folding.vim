@@ -21,4 +21,4 @@ let g:fold_rspec_foldminlines = 3    " disables closing of folds containing two 
 set foldlevel=1
 "set foldopen=all
 "set foldclose=all
-set foldmethod=manual
+set foldmethod=syntax

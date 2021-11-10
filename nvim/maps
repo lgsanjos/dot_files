@@ -48,7 +48,7 @@ nmap <C-c> :put=expand('%:t:r')<CR>
 " Save file
 map ,w :w<CR>
 
-" to replace line with yank
+" to replace wline with yank
 map D "_ddkp"
 
 " to close buffer
@@ -63,4 +63,4 @@ map zj :bp<CR>
 " map zn <C-W>=
 
 nnoremap Q <nop>
-nnoremap K <nop>
+" nnoremap K <nop>

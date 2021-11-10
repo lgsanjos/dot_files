@@ -13,8 +13,8 @@ map ,c :Commentary<CR>
 nnoremap <silent> ,ag :Ag <C-R><C-W><CR>
 
 "Easymotion"
-nmap S <Plug>(easymotion-overwin-f)
-nmap s <Plug>(easymotion-overwin-f2)
+" nmap S <Plug>(easymotion-overwin-f)
+nmap S <Plug>(easymotion-overwin-f2)
 
 " For global replace
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>

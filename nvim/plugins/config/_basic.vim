@@ -31,7 +31,8 @@ if (has("termguicolors"))
 endif
 
 syntax enable
-colorscheme OceanicNext
+"colorscheme OceanicNext
+colorscheme gruvbox
 
 let g:airline_theme='oceanicnext'
 
@@ -59,11 +60,11 @@ autocmd! BufWritePost,BufEnter *.{hs,haskell} :NeomakeDisableBuffer
 " Snipets
 let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsListSnippets="<c-u>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-m>"
+" let g:UltiSnipsJumpForwardTrigger="<c-n>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-m>"
 
-"let g:UltiSnipsSnippetsDir = "/Users/sanjos/dotfiles/nvim/snips"
-"let g:UltiSnipsSnippetDirectories=["/Users/sanjos/dotfiles/nvim/snips", "UltiSnips"]
+let g:UltiSnipsSnippetsDir = "~/dotfiles/nvim/snips"
+" let g:UltiSnipsSnippetDirectories=["/Users/sanjos/dotfiles/nvim/snips", "UltiSnips"]
 let g:UltiSnipsEditSplit= "context"
 
 let $FZF_DEFAULT_COMMAND = 'ag -l -g "" --ignore-dir=public/assets --ignore-dir=vendor --ignore-dir=sorbet'

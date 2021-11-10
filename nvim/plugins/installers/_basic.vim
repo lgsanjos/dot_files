@@ -8,23 +8,25 @@ Plug 'BurntSushi/ripgrep' " (finder)
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
 
+Plug 'luukvbaal/stabilize.nvim'
 
 " Syntex highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 " Snipets
-"Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 "Plug 'kana/vim-textobj-user'
 
 " ulti snipets
 Plug 'honza/vim-snippets'
 
-" Color theme
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'mhartington/oceanic-next'
 
 " Autocomplete
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" Function signature highlight
+Plug 'ray-x/lsp_signature.nvim'
 
 " Refactoring
 " Plug 'terryma/vim-multiple-cursors'
@@ -51,8 +53,6 @@ Plug 'junegunn/fzf.vim'
 " File navigation - gf
 " Plug 'gorkunov/smartgf.vim'
 
-" UI Theme Plug 'tomasr/molokai'
-Plug 'morhetz/gruvbox'
 " Plug 'jacoborus/tender'
 
 " UI header
@@ -60,9 +60,6 @@ Plug 'bling/vim-airline'
 
 " UI show git status
 Plug 'https://github.com/airblade/vim-gitgutter.git'
-
-" Metrics
-" Plug 'git://github.com/wakatime/vim-wakatime.git'
 
 " Might not be using
 Plug 'junegunn/vim-easy-align'
@@ -91,3 +88,8 @@ Plug 'antoinemadec/coc-fzf'
 " Plug 'codota/tabnine-vim'
 
 Plug 'yuttie/comfortable-motion.vim'
+
+" Color scheme
+Plug 'morhetz/gruvbox'
+Plug 'mhartington/oceanic-next'
+Plug 'projekt0n/github-nvim-theme'

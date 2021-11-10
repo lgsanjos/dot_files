@@ -70,7 +70,6 @@ set expandtab
 " Auto indentation for programming
 set ai
 
-colorscheme gruvbox
 set background=dark
 set t_Co=256
 set showcmd

@@ -4,7 +4,7 @@ call plug#begin('~/.nvim/plugged')
   endfor
 call plug#end()
 
-for f in split(glob('~/dotfiles/nvim/plugins/config/*'), '\n')
+for f in split(glob('~/dotfiles/nvim/plugins/config/*.vim'), '\n')
   exe 'source' f
 endfor
 

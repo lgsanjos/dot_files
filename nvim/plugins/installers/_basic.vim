@@ -10,6 +10,9 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'luukvbaal/stabilize.nvim'
 
+" native lsp
+Plug 'neovim/nvim-lspconfig'
+
 " Syntex highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
@@ -18,7 +21,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 "Plug 'kana/vim-textobj-user'
 
 " ulti snipets
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
@@ -80,8 +83,15 @@ Plug 'Raimondi/delimitMate', { 'on': [] } " TBR
 " coc - Language server
 " Plug 'Shougo/neoinclude.vim'
 " Plug 'jsfaint/coc-neoinclude'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'antoinemadec/coc-fzf'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'antoinemadec/coc-fzf'
+
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" 9000+ Snippets
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+
+
 
 " Plug 'ryanoasis/vim-devicons'
 

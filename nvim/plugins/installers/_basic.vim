@@ -10,23 +10,27 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'luukvbaal/stabilize.nvim'
 
-" Syntex highlighting
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" lsp and autocomplete
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 
 " Snipets
-" Plug 'SirVer/ultisnips'
-"Plug 'kana/vim-textobj-user'
-
-" ulti snipets
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+"Plug 'kana/vim-textobj-user'
 
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Autocomplete
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " Function signature highlight
-Plug 'ray-x/lsp_signature.nvim'
+" Plug 'ray-x/lsp_signature.nvim'
 
 " Refactoring
 " Plug 'terryma/vim-multiple-cursors'
@@ -35,10 +39,10 @@ Plug 'ray-x/lsp_signature.nvim'
 " Plug 'wincent/ferret'
 
 " Identation mark
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 
 " Navigation in file
-Plug 'easymotion/vim-easymotion'
+"Plug 'easymotion/vim-easymotion'
 
 " neovim spec runner
 Plug 'https://github.com/kassio/neoterm.git'
@@ -69,28 +73,21 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 " Plug 'tpope/vim-unimpaired'
 
 " Very likely to not be using
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " Close parenthesis
-" Plug 'Raimondi/delimitMate', { 'on': [] } " TBR
-Plug 'windwp/nvim-autopairs'
+Plug 'Raimondi/delimitMate', { 'on': [] } " TBR
+" Plug 'windwp/nvim-autopairs'
 
 " Denite.nvim
 " Plug 'Shougo/denite.nvim'
 
-" coc - Language server
-" Plug 'Shougo/neoinclude.vim'
-" Plug 'jsfaint/coc-neoinclude'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'antoinemadec/coc-fzf'
-
-" Plug 'ryanoasis/vim-devicons'
-
-" Plug 'codota/tabnine-vim'
-
+Plug 'ryanoasis/vim-devicons'
 Plug 'yuttie/comfortable-motion.vim'
 
 " Color scheme
-Plug 'morhetz/gruvbox'
-Plug 'mhartington/oceanic-next'
-Plug 'projekt0n/github-nvim-theme'
+" Plug 'morhetz/gruvbox'
+" Plug 'mhartington/oceanic-next'
+" Plug 'projekt0n/github-nvim-theme'
+" Plug 'sainnhe/everforest'
+Plug 'rakr/vim-one'

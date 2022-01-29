@@ -12,7 +12,7 @@ set scrolloff=3
 set wmnu
 
 " set a better font for mac os
-set guifont='Fantasque\ Sans\ Mono'
+"set guifont='Fantasque\ Sans\ Mono'
 "set guifont=Menlo\ For\ Powerline
 " let g:Powerline_symbols = 'fancy'
 " let g:Powerline_colorscheme='solarized16'

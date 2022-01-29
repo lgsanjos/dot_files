@@ -30,11 +30,13 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-syntax enable
-"colorscheme OceanicNext
-colorscheme gruvbox
+set background=dark
 
-let g:airline_theme='oceanicnext'
+syntax enable
+colorscheme one
+
+" colorscheme OceanicNext
+" colorscheme gruvbox
 
 " NeoMake
 
@@ -164,8 +166,6 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':f'
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
-" let g:airline_theme = 'gruvbox'
 
 " Gitgutter
 function! GitStatus()

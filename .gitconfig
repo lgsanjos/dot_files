@@ -50,7 +50,7 @@
   pfb = "!git push origin $(source ~/dotfiles/.githelpers && current_branch)"
   lc = "!git log --author='Luiz Guilherme' -1 --oneline | awk '{print $1}' | xargs -I {} sh -c 'git plog -100 {}^..HEAD'"
 [core]
-	editor = /usr/bin/vim
+	editor = "nvim"
 [credential]
 	helper = cache
 	helper = add

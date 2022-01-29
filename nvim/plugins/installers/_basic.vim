@@ -72,7 +72,8 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " Close parenthesis
-Plug 'Raimondi/delimitMate', { 'on': [] } " TBR
+" Plug 'Raimondi/delimitMate', { 'on': [] } " TBR
+Plug 'windwp/nvim-autopairs'
 
 " Denite.nvim
 " Plug 'Shougo/denite.nvim'

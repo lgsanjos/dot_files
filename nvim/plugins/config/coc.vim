@@ -222,6 +222,16 @@ let g:coc_user_config =
 \         }
 \       }
 \     },
+\     "terraform": {
+\       "command": "terraform-ls",
+\       "args": ["serve"],
+\       "filetypes": [
+\         "terraform",
+\         "tf"
+\       ],
+\       "initializationOptions": {},
+\       "settings": {}
+\     },
 \     "purescript": {
 \       "command": "purescript-language-server",
 \       "args": ["--stdio"],

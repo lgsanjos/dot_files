@@ -167,7 +167,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " let g:airline_theme = 'gruvbox'
 
-" Gitgutter 
+" Gitgutter
 function! GitStatus()
   let [a,m,r] = GitGutterGetHunkSummary()
   return printf('+%d ~%d -%d', a, m, r)

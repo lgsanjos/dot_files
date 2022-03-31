@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if [ $1 = "book" ]; then
-  echo "Edit book"
-  google docs edit "Guide to develop personal projects" --editor vim
-else
-  echo "Editing file $1"
-  google docs edit $1 --editor vim
-fi

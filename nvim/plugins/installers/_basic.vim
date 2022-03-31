@@ -17,12 +17,25 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind-nvim' 
 
 " Snipets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-"Plug 'kana/vim-textobj-user'
+
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+"Plug 'atefth/ruby-on-rails-snippets-vs-code'
+"Plug 'jest-community/vscode-jest'
+"Plug 'akamud/vscode-javascript-snippet-pack'
+Plug 'rafamadriz/friendly-snippets'
+
+" Plug 'SirVer/ultisnips'
+" Plug 'trevoke/ultisnips-rspec'
+" Plug 'dcampos/nvim-snippy'
+" Plug 'honza/vim-snippets'
+" Plug 'dcampos/cmp-snippy'
+
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+" Plug 'kana/vim-textobj-user'
 
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 

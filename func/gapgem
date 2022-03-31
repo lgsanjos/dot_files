@@ -1,9 +1,0 @@
-GAP_REPO="http://gemcutter.gid.gap.com"
-
-if [ $(gem source | grep gap) ]; 
-  then 
-    gem source --rem $GAP_REPO;
-  else
-    echo "Adding $GAP_REPO to gem source";
-    gem source --add $GAP_REPO;
- fi;

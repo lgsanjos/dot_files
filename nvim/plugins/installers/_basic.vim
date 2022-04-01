@@ -1,3 +1,5 @@
+Plug 'wbthomason/packer'
+Plug 'nvim-lualine/lualine.nvim'
 " telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -6,7 +8,7 @@ Plug 'sharkdp/bat' " (preview)
 Plug 'sharkdp/fd' " (finder)
 Plug 'BurntSushi/ripgrep' " (finder)
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'kyazdani42/nvim-web-devicons'
+"Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'luukvbaal/stabilize.nvim'
 
@@ -19,16 +21,15 @@ Plug 'hrsh7th/cmp-cmdline'
 
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'onsails/lspkind-nvim' 
 
 " Snipets
 
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'onsails/lspkind-nvim' 
 "Plug 'atefth/ruby-on-rails-snippets-vs-code'
 "Plug 'jest-community/vscode-jest'
-"Plug 'akamud/vscode-javascript-snippet-pack'
+Plug 'akamud/vscode-javascript-snippet-pack'
 Plug 'rafamadriz/friendly-snippets'
 
 " Plug 'SirVer/ultisnips'

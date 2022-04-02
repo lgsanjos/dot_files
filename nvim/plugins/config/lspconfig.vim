@@ -1,4 +1,4 @@
-set completeopt=menu,menuone,noselect
+set completeopt=longest,menu,menuone
 
 lua <<EOF
 
@@ -110,8 +110,8 @@ cmp.setup({
    sources = {
       { name = "nvim_lsp", max_item_count = 5 },
       { name = "vsnip", max_item_count = 5 },
-      { name = "path" },
-      { name = 'buffer', keyword_length = 4 }, -- Dont do completion until you've entered at least 4 chars
+      { name = "path", max_item_count = 5  },
+      { name = 'buffer', keyword_length = 3 }, -- Dont do completion until you've entered at least 4 chars
    },
    experimental = {
        native_menu = false, -- use cmp's menu

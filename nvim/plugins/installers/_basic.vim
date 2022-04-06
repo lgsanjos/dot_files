@@ -18,27 +18,27 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
-
 Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-vsnip'
+
+" For vsnip users.
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'akamud/vscode-javascript-snippet-pack'
+
+" For luasnip users.
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 " Snipets
+Plug 'rafamadriz/friendly-snippets' " works with luasnip, vsnip and coc
 
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'onsails/lspkind-nvim' 
 "Plug 'atefth/ruby-on-rails-snippets-vs-code'
 "Plug 'jest-community/vscode-jest'
-Plug 'akamud/vscode-javascript-snippet-pack'
-Plug 'rafamadriz/friendly-snippets'
 
-" Plug 'SirVer/ultisnips'
-" Plug 'trevoke/ultisnips-rspec'
-" Plug 'dcampos/nvim-snippy'
-" Plug 'honza/vim-snippets'
-" Plug 'dcampos/cmp-snippy'
 
-" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Plug 'kana/vim-textobj-user'
 
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'

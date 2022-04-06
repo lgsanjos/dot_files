@@ -1,4 +1,4 @@
-set completeopt=longest,menu,menuone
+set completeopt=menu,menuone,noselect
 
 lua <<EOF
 
@@ -65,7 +65,7 @@ local lspkind = require('lspkind')
 cmp.setup({
    snippet = {
       expand = function(args)
-         vim.fn["vsnip#anonymous"](args.body)
+        require('luasnip').lsp_expand(args.body)
       end,
    },
    mapping = {
@@ -109,14 +109,20 @@ cmp.setup({
    },
    sources = {
       { name = "nvim_lsp", max_item_count = 5 },
-      { name = "vsnip", max_item_count = 5 },
+      { name = "luasnip", max_item_count = 5 },
       { name = "path", max_item_count = 5  },
-      { name = 'buffer', keyword_length = 3 }, -- Dont do completion until you've entered at least 4 chars
+      { name = 'buffer', keyword_length = 3 },
    },
    experimental = {
        native_menu = false, -- use cmp's menu
        ghost_text = true,
    },
+})
+
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
 })
 
 vim.cmd([[
@@ -125,4 +131,14 @@ au!
 au FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }
 augroup END
 ]])
+
+
+luasnip = require 'luasnip'
+
+luasnip.filetype_extend("ruby", {"rails"})
+luasnip.filetype_extend("javascript", { "javascriptreact" })
+luasnip.filetype_extend("javascript", { "html" })
+
+require("luasnip.loaders.from_vscode").lazy_load()
+
 EOF

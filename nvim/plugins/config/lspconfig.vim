@@ -33,8 +33,6 @@ local on_attach = function(client, bufnr)
 end
 
 -- nvim-cmp supports additional completion capabilities
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local servers = {
   'tsserver',
@@ -54,10 +52,9 @@ local lspconfig = require 'lspconfig'
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
-    capabilities = capabilities,
+    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
   }
 end
-
 
 local cmp = require("cmp")
 local lspkind = require('lspkind')
@@ -108,10 +105,10 @@ cmp.setup({
       end,
    },
    sources = {
-      { name = "nvim_lsp", max_item_count = 5 },
-      { name = "luasnip", max_item_count = 5 },
-      { name = "path", max_item_count = 5  },
-      { name = 'buffer', keyword_length = 3 },
+      { name = "nvim_lsp" },
+      { name = "luasnip" },
+      { name = "path" },
+      { name = 'buffer' },
    },
    experimental = {
        native_menu = false, -- use cmp's menu

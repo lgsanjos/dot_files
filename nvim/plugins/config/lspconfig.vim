@@ -60,6 +60,9 @@ local cmp = require("cmp")
 local lspkind = require('lspkind')
 
 cmp.setup({
+   completion = {
+     completeopt = 'menu,menuone,noinsert',
+   },
    snippet = {
       expand = function(args)
         require('luasnip').lsp_expand(args.body)
@@ -104,11 +107,17 @@ cmp.setup({
          return vim_item
       end,
    },
+ 
    sources = {
-      { name = "nvim_lsp" },
-      { name = "luasnip" },
-      { name = "path" },
-      { name = 'buffer' },
+     { name = 'nvim_lsp_signature_help' },
+     { name = "luasnip" },
+     { name = "nvim_lua" },
+     { name = "buffer" },
+     { name = "path" },
+   },
+   documentation = {
+     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+     winhighlight = "NormalFloat:NormalFloat,FloatBorder:TelescopeBorder",
    },
    experimental = {
        native_menu = false, -- use cmp's menu
@@ -136,6 +145,12 @@ luasnip.filetype_extend("ruby", {"rails"})
 luasnip.filetype_extend("javascript", { "javascriptreact" })
 luasnip.filetype_extend("javascript", { "html" })
 
+luasnip.config.set_config {
+  history = false,
+  updateevents = "TextChanged,TextChangedI",
+}
+
 require("luasnip.loaders.from_vscode").lazy_load()
+require'luasnip'.filetype_extend("ruby", {"rails"})
 
 EOF

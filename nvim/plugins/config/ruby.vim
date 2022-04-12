@@ -16,7 +16,7 @@ let test#ruby#rspec#executable = 'time bundle exec rspec'
 
 let g:test#strategy = 'terminal_split'
 
-let g:test#preserve_screen = 1
+let g:test#preserve_screen = 0
 
 " vertical split instead of the default horizontal
 let g:neoterm_default_mod = 'vertical'

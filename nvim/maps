@@ -52,7 +52,7 @@ map ,w :w<CR>
 map D "_ddkp"
 
 " to close buffer
-map ,q :Bclose!<cr>
+map ,q :bd<cr>
 
 " to move buffers
 map z; :bn<CR>

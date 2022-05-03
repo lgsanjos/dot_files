@@ -1,4 +1,3 @@
-Plug 'wbthomason/packer'
 Plug 'nvim-lualine/lualine.nvim'
 " telescope
 Plug 'nvim-lua/popup.nvim'

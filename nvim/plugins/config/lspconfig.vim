@@ -115,9 +115,11 @@ cmp.setup({
      { name = "buffer" },
      { name = "path" },
    },
-   documentation = {
-     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-     winhighlight = "NormalFloat:NormalFloat,FloatBorder:TelescopeBorder",
+   window = {
+     documentation = {
+       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+       winhighlight = "NormalFloat:NormalFloat,FloatBorder:TelescopeBorder",
+     },
    },
    experimental = {
        native_menu = false, -- use cmp's menu

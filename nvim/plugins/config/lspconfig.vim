@@ -48,13 +48,24 @@ local servers = {
   'eslint',
 }
 
-local lspconfig = require 'lspconfig'
+local lspconfig = require'lspconfig'
+local configs = require'lspconfig/configs'
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  lspconfig[lsp].setup({
     on_attach = on_attach,
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-  }
+    capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities),
+  })
 end
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.emmet_ls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "html", "css", "typescriptreact", "javascriptreact" },
+})
 
 local cmp = require("cmp")
 local lspkind = require('lspkind')
@@ -109,10 +120,9 @@ cmp.setup({
    },
  
    sources = {
-     { name = "luasnip" },
+     { name = "nvim_lsp" },
      { name = 'nvim_lsp_signature_help' },
-     { name = "nvim_lua" },
-     { name = "buffer" },
+     { name = "luasnip" },
      { name = "path" },
    },
    window = {
@@ -152,7 +162,7 @@ luasnip.config.set_config {
   updateevents = "TextChanged,TextChangedI",
 }
 
-require("luasnip.loaders.from_vscode").lazy_load()
+-- require("luasnip.loaders.from_vscode").lazy_load()
 require'luasnip'.filetype_extend("ruby", {"rails"})
 
 EOF

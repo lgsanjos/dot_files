@@ -21,7 +21,6 @@ plugins=(
   macos
   rvm
   rails
-  zsh-nvm
   rake
   ruby
   tmux

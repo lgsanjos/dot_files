@@ -27,7 +27,8 @@ plugins=(
   tmux
   fzf
   z
-  zsh-completions
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 autoload -U compinit && compinit

@@ -11,4 +11,9 @@ M.ui = {
 
 M.mappings = require "custom.mappings"
 
+local userPlugins = require "custom.plugins"
+M.plugins = {
+   user = userPlugins
+}
+
 return M

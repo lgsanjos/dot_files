@@ -15,6 +15,7 @@ M.general = {
   },
 
   n = {
+    ["<C-h>"] = { ":NvimTreeFocus<CR>"}
   },
 
   v = {

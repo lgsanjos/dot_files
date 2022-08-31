@@ -26,6 +26,9 @@ plugins=(
   tmux
   fzf
   z
+  1password
+  ag
+  ripgrep
   zsh-autosuggestions
   zsh-syntax-highlighting
 )

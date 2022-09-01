@@ -15,7 +15,10 @@ M.general = {
   },
 
   n = {
-    ["<C-h>"] = { ":NvimTreeFocus<CR>"}
+    ["<C-h>"] = { ":NvimTreeFocus<CR>"},
+    [",s"] = { "<Plug>(easymotion-s)"},
+    ["<C-b>n"] = { ":bNext<CR>"},
+    ["<C-b>p"] = { ":bprevious<CR>"}
   },
 
   v = {

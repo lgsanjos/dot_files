@@ -1,12 +1,15 @@
 -- My plugins
 return {
+  ["easymotion/vim-easymotion"] = {
+
+  },
   ["neovim/nvim-lspconfig"] = {
     config = function()
       require "plugins.configs.lspconfig"
 
       -- relative to current file path:
       -- reload nvim and run :PackerCompile after changing the file path below:
-      require "custom.lspsetup"
+      require "custom.plugins.lspconfig"
     end,
   },
 

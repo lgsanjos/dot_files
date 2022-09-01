@@ -13,6 +13,21 @@ M.mappings = require "custom.mappings"
 
 local userPlugins = require "custom.plugins"
 M.plugins = {
+   override = {
+      ["nvim-treesitter/nvim-treesitter"] = {
+        ensure_installed = {
+          "html",
+          "scss",
+          "css",
+          "javascript",
+          "graphql",
+          "json",
+          "typescript",
+          "ruby",
+          "markdown"
+       },
+     }
+   },
    user = userPlugins
 }
 

@@ -15,10 +15,14 @@ M.general = {
   },
 
   n = {
-    ["<C-h>"] = { ":NvimTreeFocus<CR>"},
+    ["<C-h>"] = { ":NvimTreeFindFile<CR>"},
     [",s"] = { "<Plug>(easymotion-s)"},
     ["<C-b>n"] = { ":bNext<CR>"},
-    ["<C-b>p"] = { ":bprevious<CR>"}
+    ["<C-b>p"] = { ":bprevious<CR>"},
+    [",ca"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>"},
+    [",cr"] = { "<cmd>lua vim.lsp.buf.rename()<CR>"},
+    [",ci"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>"},
+    [",cf"] = { "<cmd>lua vim.lsp.buf.format()<CR>"},
   },
 
   v = {

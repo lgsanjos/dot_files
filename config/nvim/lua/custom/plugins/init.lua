@@ -1,5 +1,8 @@
 -- My plugins
 return {
+  ["numkil/ag.nvim"] = {
+
+  },
   ["easymotion/vim-easymotion"] = {
 
   },

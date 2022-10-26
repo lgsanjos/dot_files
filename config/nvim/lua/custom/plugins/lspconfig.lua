@@ -17,6 +17,17 @@ local servers = {
   'eslint',
 }
 
+lspconfig.purescriptls.setup {
+  settings = {
+    purescript = {
+      addSpageSources = true
+    },
+  },
+  flags = {
+    debounce_text_changes = 150,
+  },
+}
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,

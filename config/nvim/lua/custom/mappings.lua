@@ -23,6 +23,7 @@ M.general = {
     [",cr"] = { "<cmd>lua vim.lsp.buf.rename()<CR>"},
     [",ci"] = { "<cmd>lua vim.lsp.buf.type_definition()<CR>"},
     [",cf"] = { "<cmd>lua vim.lsp.buf.format()<CR>"},
+    [",co"] = { ":SymbolsOutline<CR>"},
   },
 
   v = {

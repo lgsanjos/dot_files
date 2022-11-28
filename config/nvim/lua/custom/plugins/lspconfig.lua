@@ -4,6 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local servers = {
   "cssls",
+  "emmet_ls",
   'tsserver',
   'purescriptls',
   'html',
@@ -17,20 +18,12 @@ local servers = {
   'eslint',
 }
 
-lspconfig.purescriptls.setup {
-  settings = {
-    purescript = {
-      addSpageSources = true
-    },
-  },
-  flags = {
-    debounce_text_changes = 150,
-  },
-}
-
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    flags = {
+      debounce_text_changes = 150,
+    },
   }
 end

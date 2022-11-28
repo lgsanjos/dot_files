@@ -26,10 +26,7 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
-
-    --
-    'purescript-language-server',
-    'purescriptls'
+    "emmet-ls",
   },
 }
 

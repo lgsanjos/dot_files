@@ -32,27 +32,6 @@ return {
   ["nvim-neorg/neorg"] = {
   },
 
-  ['Wansmer/treesj'] = {
-    after="nvim-treesitter",
-    config= function()
-      require('treesj').setup({
-        use_default_keymaps = true,
-        check_syntax_error = true,
-        max_join_length = 120,
-        cursor_behavior = 'hold',
-        notify = true,
-        langs = {
-          "scss",
-          "html",
-          "css",
-          "javascript",
-          "json",
-          "typescript",
-        },
-      })
-    end,
-  },
-
   ['simrat39/symbols-outline.nvim'] = {
     after="nvim-treesitter",
     config = function()

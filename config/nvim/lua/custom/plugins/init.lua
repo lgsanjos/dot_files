@@ -3,6 +3,9 @@ local overrides = require "custom.plugins.overrides"
 return {
   ----------------------------------------- default plugins ------------------------------------------
 
+  ["L3MON4D3/LuaSnip"] = {
+
+  },
   ["neovim/nvim-lspconfig"] = {
     config = function()
       require "plugins.configs.lspconfig"
@@ -13,7 +16,16 @@ return {
     end,
   },
 
-
+  -- format & linting
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require "custom.plugins.null-ls"
+    end,
+  },
+  ["ThePrimeagen/refactoring.nvim"] = {
+    after = "nvim-treesitter"
+  },
   ["kyazdani42/nvim-tree.lua"] = { override_options = overrides.nvimtree },
   ["nvim-treesitter/nvim-treesitter"] = { override_options = overrides.treesitter },
     -- TODO: mason doesnt seem to pick this config up when running :MasonInstallAll

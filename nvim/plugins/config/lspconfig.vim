@@ -43,7 +43,6 @@ local servers = {
   'hls',
   'jsonls',
   'sqlls',
-  'sorbet',
   'solargraph',
   'eslint',
 }

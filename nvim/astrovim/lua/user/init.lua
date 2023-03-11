@@ -216,8 +216,13 @@ local config = {
                         ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
                         ["<leader>bn"] = { "<cmd>bn<cr>", desc = "Next buffer" },
                         ["<leader>bp"] = { "<cmd>bp<cr>", desc = "Previous buffer" },
-                        -- quick save
-                        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
+                        -- Bookmarks
+                        ["<leader>m1"] = { "<cmd>'1<cr>", desc = "Go to bookmark 1" },
+                        ["<leader>m2"] = { "<cmd>'2<cr>", desc = "Go to bookmark 2" },
+                        ["<leader>m3"] = { "<cmd>'3<cr>", desc = "Go to bookmark 3" },
+                        ["<leader>m4"] = { "<cmd>'4<cr>", desc = "Go to bookmark 4" },
+                        ["<leader>m5"] = { "<cmd>'5<cr>", desc = "Go to bookmark 5" },
                 },
                 t = {
                         -- setting a mapping to false will disable it

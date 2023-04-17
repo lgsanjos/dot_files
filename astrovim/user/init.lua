@@ -1,6 +1,3 @@
--- local set = vim.opt
--- set.langmap = 'jh,kj,lk,\\;l'
-
 return {
   -- Configure AstroNvim updates
   updater = {
@@ -49,7 +46,7 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      "pyright",
+      -- "pyright",
       "solargraph"
     },
   },

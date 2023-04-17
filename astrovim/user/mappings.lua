@@ -10,7 +10,7 @@ return {
     -- Test
     ["<leader>rn"] = { "<cmd>TestNearest<cr>", desc = "Run nearest test" },
     ["<leader>rl"] = { "<cmd>TestLast<cr>", desc = "Rerun last test" },
-    ["<leader>rf"] = { "<cmd>TestFile<cr>", desc = "Rerun last test" },
+    ["<leader>rf"] = { "<cmd>TestFile<cr>", desc = "Run test file" },
     ["<leader>rg"] = { "<cmd>TestEdit<cr>", desc = "Go to test file" },
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"

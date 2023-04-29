@@ -7,6 +7,12 @@
 return {
   -- first key is the mode
   n = {
+    ["<C-p"] = { "<cmd>e: ~/notes.txt<CR>", desc = "opens notes" },
+    -- nvim tmux
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", desc = "Move to window at left" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", desc = "Move to window at down" },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", desc = "Move to window at up" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", desc = "Move to window at right" },
     -- Test
     ["<leader>rn"] = { "<cmd>TestNearest<cr>", desc = "Run nearest test" },
     ["<leader>rl"] = { "<cmd>TestLast<cr>", desc = "Rerun last test" },
@@ -27,7 +33,7 @@ return {
     },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
-    ["<leader>b"] = { name = "Buffers" },
+    ["<leader>b"] = { name = "Buffers", desc = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },

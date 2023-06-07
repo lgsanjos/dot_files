@@ -7,8 +7,16 @@
 return {
   -- first key is the mode
   n = {
-    ["<C-p"] = { "<cmd>e: ~/notes.txt<CR>", desc = "opens notes" },
-    -- nvim tmux
+    ["<leader>e"] = { "<cmd> Neotree filesystem toggle left<CR>", desc = "Toggle neo tree" },
+    ["<leader>o"] = { "<cmd> Neotree filesystem toggle left<CR>", desc = "Toggle neo tree" },
+    -- Harpoon
+    ["<leader><leader>1"] = { '<cmd> :lua require("harpoon.ui").nav_file(1)<CR>', desc = "Nav to harpoon 1" },
+    ["<leader><leader>2"] = { '<cmd> :lua require("harpoon.ui").nav_file(2)<CR>', desc = "Nav to harpoon 2" },
+    ["<leader><leader>3"] = { '<cmd> :lua require("harpoon.ui").nav_file(3)<CR>', desc = "Nav to harpoon 3" },
+    ["<leader><leader>4"] = { '<cmd> :lua require("harpoon.ui").nav_file(4)<CR>', desc = "Nav to harpoon 4" },
+    ["<leader><leader>s"] = { '<cmd> :lua require("harpoon.mark").toggle_file()<CR><CR>', desc = "Toggle harpoon mark" },
+
+    -- nvim :Neotree filesystem reveal righttmux
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", desc = "Move to window at left" },
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", desc = "Move to window at down" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", desc = "Move to window at up" },
@@ -22,18 +30,9 @@ return {
     -- mappings seen under group name "Buffer"
     ["<leader>bn"] = { "<cmd>:bnext<cr>", desc = "Next tab" },
     ["<leader>bp"] = { "<cmd>:bprevious<cr>", desc = "Previous tab" },
-    ["<leader>bD"] = {
-      function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
-          require("astronvim.utils.buffer").close(
-            bufnr)
-        end)
-      end,
-      desc = "Pick to close",
-    },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
-    ["<leader>b"] = { name = "Buffers", desc = "Buffers" },
+    -- ["<leader>b"] = { name = "Buffers", desc = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },

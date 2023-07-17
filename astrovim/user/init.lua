@@ -39,7 +39,6 @@ return {
       "solargraph",
     },
   },
-  -- Configure require("lazy").setup() options
   lazy = {
     defaults = { lazy = true },
     performance = {

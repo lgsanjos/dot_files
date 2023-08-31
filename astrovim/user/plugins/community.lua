@@ -2,7 +2,6 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.toml" },
-  { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.note-taking.neorg" },
@@ -12,7 +11,6 @@ return {
   { import = "astrocommunity.diagnostics.trouble-nvim"},
   { import = "astrocommunity.editing-support.mini-splitjoin"},
   { import = "astrocommunity.editing-support.refactoring-nvim"},
-  { import = "astrocommunity.editing-support.zen-mode-nvim"},
 
 
   { import = "astrocommunity.colorscheme.kanagawa-nvim", enabled = true },

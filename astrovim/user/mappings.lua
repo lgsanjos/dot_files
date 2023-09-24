@@ -9,12 +9,6 @@ return {
   n = {
     ["<leader>e"] = { "<cmd> Neotree filesystem toggle left<CR>", desc = "Toggle neo tree" },
     ["<leader>o"] = { "<cmd> Neotree filesystem toggle left<CR>", desc = "Toggle neo tree" },
-    -- Harpoon
-    ["<leader><leader>1"] = { '<cmd> :lua require("harpoon.ui").nav_file(1)<CR>', desc = "Nav to harpoon 1" },
-    ["<leader><leader>2"] = { '<cmd> :lua require("harpoon.ui").nav_file(2)<CR>', desc = "Nav to harpoon 2" },
-    ["<leader><leader>3"] = { '<cmd> :lua require("harpoon.ui").nav_file(3)<CR>', desc = "Nav to harpoon 3" },
-    ["<leader><leader>4"] = { '<cmd> :lua require("harpoon.ui").nav_file(4)<CR>', desc = "Nav to harpoon 4" },
-    ["<leader><leader>s"] = { '<cmd> :lua require("harpoon.mark").toggle_file()<CR><CR>', desc = "Toggle harpoon mark" },
 
     -- nvim :Neotree filesystem reveal righttmux
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", desc = "Move to window at left" },

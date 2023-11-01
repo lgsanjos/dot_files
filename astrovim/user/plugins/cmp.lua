@@ -8,12 +8,12 @@ return {
       local cmp = require "cmp"
       -- modify the sources part of the options table
       opts.sources = cmp.config.sources {
-        { name = "nvim_lsp", priority = 1000, keyword_length = 3 },
-        { name = "nvim_lsp_signature_help", priority = 800, keyword_length = 3 },
-        { name = 'vsnip', pirority = 800, keyword_length = 2 },         -- nvim-cmp source for vim-vsnip 
-        { name = "luasnip", priority = 750, keyword_length = 2 },
-        { name = "buffer", priority = 500, keyword_length = 2 },
-        { name = "path", priority = 250 },
+        { name = "path"  },
+        { name = "nvim_lsp", keyword_length = 1 },
+        { name = "nvim_lsp_signature_help", keyword_length = 2 },
+        { name = 'vsnip' },
+        { name = "luasnip" },
+        { name = "buffer" },
       }
 
       opts.window = {

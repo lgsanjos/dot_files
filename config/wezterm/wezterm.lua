@@ -12,12 +12,15 @@ return {
   --
   -- Catppuccin
   -- https://catppuccin.com
-  color_scheme = 'Pnevma',
-
+  -- color_scheme = 'Neutron',
+  -- color_scheme = 'Tokyo Night',
+  color_scheme = 'Tomorrow Night',
+                            
+ 
   -- Font configuration
   -- https://wezfurlong.org/wezterm/config/fonts.html
   font = wezterm.font('JetBrains Mono'),
-  font_size = 16.0,
+  font_size = 17.0,
 
   -- Disable ligatures
   -- https://wezfurlong.org/wezterm/config/font-shaping.html
@@ -38,10 +41,12 @@ return {
     { key = 'o', mods="LEADER", action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}} },
     { key = 'O', mods="LEADER", action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}} },
     { key = 'c', mods="LEADER", action=wezterm.action{SpawnTab="CurrentPaneDomain"} },
+
     { key = 'h', mods="LEADER", action=wezterm.action{ActivatePaneDirection="Left"} },
     { key = 'l', mods="LEADER", action=wezterm.action{ActivatePaneDirection="Right"} },
     { key = 'k', mods="LEADER", action=wezterm.action{ActivatePaneDirection="Up"} },
     { key = 'j', mods="LEADER", action=wezterm.action{ActivatePaneDirection="Down"} },
+
     { key = 'f', mods="LEADER", action="TogglePaneZoomState" },
     { key = 'v', mods="LEADER", action="ActivateCopyMode" },
   }

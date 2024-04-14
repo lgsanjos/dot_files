@@ -52,6 +52,7 @@ true-color = true
 # create a new minor mode bound to `+`
 [keys.normal."+"]
 m = ":run-shell-command make"
+r = ":run-shell-command cargo run"
 c = ":run-shell-command cargo build"
 t = ":run-shell-command cargo test"
 

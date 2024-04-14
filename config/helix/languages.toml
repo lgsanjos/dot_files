@@ -20,6 +20,17 @@ LOG_FILE = "/tmp/completion.log"
 name = "rust"
 language-servers = [ "scls", "rust-analyzer" ]
 
+[language.debugger]
+name = "lldb-vscode"
+transport = "stdio"
+command = "lldb-vscode"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+completion = [ { name = "binary", completion = "filename" } ]
+args = { program = "{0}", initCommands = [ "command script import /usr/local/etc/lldb_vscode_rustc_primer.py" ] }
+
 [language-server.rust-analyzer.config]
 check = { command = "clippy" }
 hover = { actions = { enable = true } }

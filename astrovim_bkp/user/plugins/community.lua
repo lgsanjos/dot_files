@@ -11,6 +11,7 @@ return {
   { import = "astrocommunity.diagnostics.trouble-nvim"},
   { import = "astrocommunity.editing-support.mini-splitjoin"},
   { import = "astrocommunity.editing-support.refactoring-nvim"},
+  { import = "astrocommunity.completion.copilot-lua-cmp"},
 
 
   { import = "astrocommunity.colorscheme.kanagawa-nvim", enabled = true },

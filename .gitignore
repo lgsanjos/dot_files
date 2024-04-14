@@ -1,2 +1,4 @@
 *.work
 private/*
+.ds_store
+**/*/.ds_store

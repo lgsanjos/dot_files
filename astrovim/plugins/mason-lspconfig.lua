@@ -2,9 +2,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "tsserver", "rust_analyzer" },
+      ensure_installed = { "tsserver" },
     },
   },
 }
-
-

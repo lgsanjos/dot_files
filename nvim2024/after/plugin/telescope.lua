@@ -1,7 +1,8 @@
 -- Telescope
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fa', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ff', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
@@ -32,6 +33,11 @@ lsp_zero.extend_lspconfig({
 	capabilities = require('cmp_nvim_lsp').default_capabilities()
 })
 
+
+require('lspconfig').tsserver.setup({})
+
+-- 
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	handlers = {
@@ -50,10 +56,11 @@ require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
 	sources = {
-		{ name = 'path' },
-		{ name = 'nvim_lsp' },
+    { name = "nvim_lsp_signature_help" },
+		{ name = 'nvim_lsp', keyword_length = 1 },
 		{ name = 'luasnip', keyword_length = 2 },
-		{ name = 'buffer',  keyword_length = 3 },
+		{ name = 'path' },
+		{ name = 'buffer',  keyword_length = 4 },
 	},
 	window = {
 		completion = cmp.config.window.bordered(),

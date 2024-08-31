@@ -11,6 +11,7 @@ vim.keymap.set("n", "<leader>ck", "<cmd>e ~/.config/nvim/lua/me/remap.lua<cr>");
 vim.keymap.set("n", "<leader>cp", "<cmd>e ~/.config/nvim/lua/plugins<cr>");
 
 vim.keymap.set("n", "<leader>ck", "<cmd>e ~/.config/nvim/lua/me/remap.lua<cr>");
+
 -- PLUGINS --
 --
 

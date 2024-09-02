@@ -15,6 +15,10 @@ vim.keymap.set("n", "<leader>ck", "<cmd>e ~/.config/nvim/lua/me/remap.lua<cr>");
 -- PLUGINS --
 --
 
+-- live-grep-telescope
+vim.keymap.set('n', '<leader>fc', '<cmd>lua require(\'telescope.builtin\').grep_string({search = vim.fn.expand("<cword>")})<cr>', {})
+
+-- GitBlame
 vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<cr>");
 
 -- Twilight

@@ -15,6 +15,8 @@ vim.keymap.set("n", "<leader>ck", "<cmd>e ~/.config/nvim/lua/me/remap.lua<cr>");
 -- PLUGINS --
 --
 
+vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<cr>");
+
 -- Twilight
 vim.keymap.set("n", "<leader>tt", "<cmd>Twilight<cr>");
 

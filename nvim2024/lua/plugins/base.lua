@@ -72,15 +72,10 @@ return {
     end,
   },
 
-  -- {
-  --     "ThePrimeagen/harpoon",
-  --     branch = "harpoon2",
-  --     dependencies = { "nvim-lua/plenary.nvim" }
-  -- },
-
-  { "anuvyklack/pretty-fold.nvim", lazy = false },
-
-  { "ggandor/lightspeed.nvim",     lazy = false },
+  {
+    "ggandor/lightspeed.nvim",
+    lazy = false,
+  },
 
   {
     "folke/twilight.nvim",

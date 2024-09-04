@@ -10,7 +10,6 @@ vim.o.cursorline = true      -- Highlight the current line
 vim.o.cursorcolumn = false
 vim.o.termguicolors = true   -- Enable 24-bit RGB colors
 vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
-vim.o.foldenable = true
 vim.o.ai = true
 vim.o.incsearch = true
 vim.o.hlsearch = true
@@ -22,9 +21,23 @@ vim.o.autoread = true
 vim.opt.backup = false
 vim.opt.swapfile = false
 
+vim.opt.foldenable = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldcolumn = "1"
+vim.opt.fillchars = { fold = " " }
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
+-- vim.opt.foldlevelstart
+
 -- Syntax highlighting and filetype plugins
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
 
--- vim.wo.foldmethod = 'expr'
--- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.api.nvim_exec(
+  [[
+  nnoremap <silent> <cr> :noh<cr><cr>
+set switchbuf=useopen,usetab
+set laststatus=3
+  ]], false
+)

@@ -1,5 +1,5 @@
 return {
-  -- the colorscheme should be available when starting Neovim
+
   {
     "folke/tokyonight.nvim",
     lazy = false,    -- make sure we load this during startup if it is your main colorscheme
@@ -9,6 +9,20 @@ return {
       vim.cmd([[colorscheme tokyonight]])
     end,
   },
+
+  -- {
+  --   'aliqyan-21/darkvoid.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     -- load the colorscheme here
+  --     vim.cmd([[colorscheme darkvoid]])
+  --   end,
+  --   opts = {
+  --     glow = true,
+  --     transparent = true
+  --   }
+  -- },
 
   {
     'numToStr/Comment.nvim',

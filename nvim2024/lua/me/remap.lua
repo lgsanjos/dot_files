@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>w", vim.cmd.write);
+vim.keymap.set("n", "<leader>q", vim.cmd.bdelete);
 vim.keymap.set("n", "<leader>c", vim.cmd.bdelete);
 vim.keymap.set("n", "<leader>bn", vim.cmd.bnext);
 vim.keymap.set("n", "<leader>bp", vim.cmd.bprevious);

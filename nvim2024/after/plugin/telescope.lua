@@ -56,9 +56,10 @@ require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
 	sources = {
+    { name = "copilot", group_index = 2 },
     { name = "nvim_lsp_signature_help" },
-		{ name = 'nvim_lsp', keyword_length = 1 },
-		{ name = 'luasnip', keyword_length = 2 },
+		{ name = 'nvim_lsp', keyword_length = 1, max_item_count = 10, group_index = 2 },
+		{ name = 'luasnip', keyword_length = 2, group_index = 2 },
 		{ name = 'buffer', keyword_length = 4 },
 		{ name = 'path' },
 	},
@@ -89,4 +90,10 @@ cmp.setup({
 	-- note: if you are going to use lsp-kind (another plugin)
 	-- replace the line below with the function from lsp-kind
 	formatting = lsp_zero.cmp_format({ details = true }),
+})
+
+-- Disable copilot in favour to use copilot-cmp
+require("copilot").setup({
+  suggestion = { enabled = false },
+  panel = { enabled = false },
 })

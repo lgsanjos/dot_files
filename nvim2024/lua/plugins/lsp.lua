@@ -11,6 +11,15 @@ return {
   {'hrsh7th/cmp-path'},
   {'saadparwaiz1/cmp_luasnip'},
   {'rafamadriz/friendly-snippets'},
+  {
+      "zbirenbaum/copilot.lua",
+      cmd = "Copilot",
+      event = "InsertEnter",
+  },
+  {
+      "zbirenbaum/copilot-cmp",
+      config = function()
+          require("copilot_cmp").setup()
+      end,
+  },
 };
-
-

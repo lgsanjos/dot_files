@@ -48,6 +48,7 @@ gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
 rulers = [120]
 # Force the theme to show colors
 true-color = true
+mouse = false
 
 # create a new minor mode bound to `+`
 [keys.normal."+"]
@@ -84,7 +85,7 @@ O = ["open_above", "insert_mode"]
 # Muscle memory
 # "{" = ["goto_prev_paragraph", "collapse_selection"]
 # "}" = ["goto_next_paragraph", "collapse_selection"]
-# 0 = "goto_line_start"
+0 = "goto_line_start"
 # "$" = "goto_line_end"
 # "^" = "goto_first_nonwhitespace"
 # G = "goto_file_end"
@@ -189,11 +190,13 @@ C-a = ["append_mode", "collapse_selection"]
 k = ["extend_line_up", "extend_to_line_bounds"]
 j = ["extend_line_down", "extend_to_line_bounds"]
 
+
+
 # Clipboards over registers ye ye
 # d = ["yank_main_selection_to_clipboard", "delete_selection"]
 # x = ["yank_main_selection_to_clipboard", "delete_selection", ]
-y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "normal_mode", "collapse_selection", "normal_mode"]
-Y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "goto_line_start", "collapse_selection", "normal_mode"]
+# y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "normal_mode", "collapse_selection", "normal_mode"]
+# Y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "goto_line_start", "collapse_selection", "normal_mode"]
 
 p = "paste_clipboard_before"
 P = "replace_selections_with_clipboard" # No life without this

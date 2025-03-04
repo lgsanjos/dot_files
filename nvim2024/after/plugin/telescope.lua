@@ -9,7 +9,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- LSP
 
-local lsp_zero = require('lsp-zero')
+-- local lsp_zero = require('lsp-zero')
 
 local lsp_attach = function(client, bufnr)
 	local opts = { buffer = bufnr }
@@ -26,74 +26,67 @@ local lsp_attach = function(client, bufnr)
 	vim.keymap.set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 end
 
-lsp_zero.extend_lspconfig({
-	sign_text = true,
-	lsp_attach = lsp_attach,
-	float_border = 'rounded',
-	capabilities = require('cmp_nvim_lsp').default_capabilities()
-})
+-- lsp_zero.extend_lspconfig({
+-- 	sign_text = true,
+-- 	lsp_attach = lsp_attach,
+-- 	float_border = 'rounded',
+-- 	capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- })
 
 
-require('lspconfig').ts_lsp.setup({})
-
--- 
-
-require('mason').setup({})
-require('mason-lspconfig').setup({
-	handlers = {
-		function(server_name)
-			require('lspconfig')[server_name].setup({})
-		end,
-	}
-})
-
-local cmp = require('cmp')
-local cmp_action = lsp_zero.cmp_action()
-
--- this is the function that loads the extra snippets
--- from rafamadriz/friendly-snippets
-require('luasnip.loaders.from_vscode').lazy_load()
-
-cmp.setup({
-	sources = {
-    { name = "copilot", group_index = 2 },
-    { name = "nvim_lsp_signature_help" },
-		{ name = 'nvim_lsp', keyword_length = 1, max_item_count = 10, group_index = 2 },
-		{ name = 'luasnip', keyword_length = 2, group_index = 2 },
-		{ name = 'buffer', keyword_length = 4 },
-		{ name = 'path' },
-	},
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
-	snippet = {
-		expand = function(args)
-			require('luasnip').lsp_expand(args.body)
-		end,
-	},
-	mapping = cmp.mapping.preset.insert({
-		-- confirm completion item
-		['<Enter>'] = cmp.mapping.confirm({ select = true }),
-
-		-- trigger completion menu
-		['<C-Space>'] = cmp.mapping.complete(),
-
-		-- scroll up and down the documentation window
-		['<C-u>'] = cmp.mapping.scroll_docs(-4),
-		['<C-d>'] = cmp.mapping.scroll_docs(4),
-
-		-- navigate between snippet placeholders
-		['<C-f>'] = cmp_action.luasnip_jump_forward(),
-		['<C-b>'] = cmp_action.luasnip_jump_backward(),
-	}),
-	-- note: if you are going to use lsp-kind (another plugin)
-	-- replace the line below with the function from lsp-kind
-	formatting = lsp_zero.cmp_format({ details = true }),
-})
-
--- Disable copilot in favour to use copilot-cmp
-require("copilot").setup({
-  suggestion = { enabled = false },
-  panel = { enabled = false },
-})
+-- require('lspconfig').ts_lsp.setup({})
+--
+--
+-- require('mason').setup({})
+-- require('mason-lspconfig').setup({
+-- 	handlers = {
+-- 		function(server_name)
+-- 			require('lspconfig')[server_name].setup({})
+-- 		end,
+-- 	}
+-- })
+--
+-- local cmp = require('cmp')
+-- local cmp_action = lsp_zero.cmp_action()
+--
+-- -- this is the function that loads the extra snippets
+-- -- from rafamadriz/friendly-snippets
+-- require('luasnip.loaders.from_vscode').lazy_load()
+--
+-- cmp.setup({
+-- 	sources = {
+--     { name = "nvim_lsp_signature_help" },
+-- 		{ name = 'nvim_lsp', keyword_length = 1, max_item_count = 10, group_index = 2 },
+-- 		{ name = 'luasnip', keyword_length = 2, group_index = 2 },
+-- 		{ name = 'buffer', keyword_length = 4 },
+-- 		{ name = 'path' },
+-- 	},
+-- 	window = {
+-- 		completion = cmp.config.window.bordered(),
+-- 		documentation = cmp.config.window.bordered(),
+-- 	},
+-- 	snippet = {
+-- 		expand = function(args)
+-- 			require('luasnip').lsp_expand(args.body)
+-- 		end,
+-- 	},
+-- 	mapping = cmp.mapping.preset.insert({
+-- 		-- confirm completion item
+-- 		['<Enter>'] = cmp.mapping.confirm({ select = true }),
+--
+-- 		-- trigger completion menu
+-- 		['<C-Space>'] = cmp.mapping.complete(),
+--
+-- 		-- scroll up and down the documentation window
+-- 		['<C-u>'] = cmp.mapping.scroll_docs(-4),
+-- 		['<C-d>'] = cmp.mapping.scroll_docs(4),
+--
+-- 		-- navigate between snippet placeholders
+-- 		['<C-f>'] = cmp_action.luasnip_jump_forward(),
+-- 		['<C-b>'] = cmp_action.luasnip_jump_backward(),
+-- 	}),
+-- 	-- note: if you are going to use lsp-kind (another plugin)
+-- 	-- replace the line below with the function from lsp-kind
+-- 	formatting = lsp_zero.cmp_format({ details = true }),
+-- })
+--

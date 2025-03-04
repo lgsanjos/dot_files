@@ -31,6 +31,19 @@ vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<cr>");
 -- Twilight
 vim.keymap.set("n", "<leader>tt", "<cmd>Twilight<cr>");
 
+vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', {})
+vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', {})
+vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', {})
+vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', {})
+vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', {})
+vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', {})
+vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', {})
+vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {})
+vim.keymap.set('n', '<leader>lf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', {})
+vim.keymap.set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>', {})
+
+
+
 -- local harpoon = require("harpoon")
 -- -- REQUIRED
 -- harpoon:setup()

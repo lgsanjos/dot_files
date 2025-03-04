@@ -37,7 +37,7 @@ vim.cmd('filetype plugin indent on')
 vim.api.nvim_exec(
   [[
   nnoremap <silent> <cr> :noh<cr><cr>
-set switchbuf=useopen,usetab
-set laststatus=3
+  set switchbuf=useopen,usetab
+  set laststatus=3
   ]], false
 )

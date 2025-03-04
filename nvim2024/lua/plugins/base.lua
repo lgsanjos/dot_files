@@ -80,14 +80,6 @@ return {
     opts = { use_default_keymaps = false, max_join_length = 150 },
   },
 
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = function()
-      require("nvim-treesitter.install").update({ with_sync = true })()
-    end,
-  },
-
   {
     "ggandor/lightspeed.nvim",
     lazy = false,
@@ -117,17 +109,5 @@ return {
       },
       exclude = {}, -- exclude these filetypes
     }
-  },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    dependencies = {
-      { "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
-      { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
-    },
-    build = "make tiktoken", -- Only on MacOS or Linux
-    opts = {
-      -- See Configuration section for options
-    },
-    -- See Commands section for default commands if you want to lazy load on them
   },
 }

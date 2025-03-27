@@ -11,5 +11,6 @@ ln -s ~/dotfiles/alacritty.toml ~/.alacritty.toml
 # tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 
 npm install -g spaceship-zsh-theme

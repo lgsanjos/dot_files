@@ -42,7 +42,8 @@ vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', {})
 vim.keymap.set('n', '<leader>lf', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', {})
 vim.keymap.set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<cr>', {})
 
-
+-- Aerial
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 
 -- local harpoon = require("harpoon")
 -- -- REQUIRED

@@ -1,30 +1,7 @@
 return {
   {
-    "sainnhe/everforest"
+    "EdenEast/nightfox.nvim"
   },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      -- load the colorscheme here
-      vim.cmd([[colorscheme everforest]])
-    end,
-  },
-
-  -- {
-  --   'aliqyan-21/darkvoid.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     -- load the colorscheme here
-  --     vim.cmd([[colorscheme darkvoid]])
-  --   end,
-  --   opts = {
-  --     glow = true,
-  --     transparent = true
-  --   }
-  -- },
 
   {
     'numToStr/Comment.nvim',

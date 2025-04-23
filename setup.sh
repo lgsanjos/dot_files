@@ -1,5 +1,7 @@
 set -x
 
+mkdir -p ~/.config/
+mkdir -p ~/.config/nvim
 # ln -s ~/dotfiles/config/nvim/nvchad/custom ~/.config/nvim/lua/custom
 mv ~/.config/nvim ~/.config/nvim_bkp
 ln -s ~/dotfiles/nvim2024 ~/.config/nvim

@@ -68,9 +68,10 @@ C-r = ":config-reload"
 # "space-s" = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
 # a = "move_char_right" # Maps the 'a' key to the move_char_left command
 # w = "move_line_up" # Maps the 'w' key move_line_up
-g = { a = "code_action" } # Maps `ga` to show possible code actions
+# g = { a = "code_action" } # Maps `ga` to show possible code actions
 "ret" = ["open_below", "normal_mode"] # Maps the enter key to open_below then re-enter normal mode
 
+y = "yank_joined_to_clipboard"
 
 # Some nice Helix stuff
 C-h = "select_prev_sibling"
@@ -198,8 +199,8 @@ j = ["extend_line_down", "extend_to_line_bounds"]
 # y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "normal_mode", "collapse_selection", "normal_mode"]
 # Y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "goto_line_start", "collapse_selection", "normal_mode"]
 
-p = "paste_clipboard_before"
-P = "replace_selections_with_clipboard" # No life without this
+# p = "paste_clipboard_before"
+# P = "replace_selections_with_clipboard" # No life without this
 
 C-space = "signature_help"
 # Escape the madness! No more fighting with the cursor! Or with multiple cursors!

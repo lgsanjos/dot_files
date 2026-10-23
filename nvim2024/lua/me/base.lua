@@ -32,7 +32,7 @@ vim.opt.foldlevel = 99
 -- Syntax highlighting and filetype plugins
 vim.cmd('syntax enable')
 vim.cmd('filetype plugin indent on')
-vim.cmd("colorscheme nightfox")
+-- colorscheme is set by LazyVim (see lua/plugins/theme.lua)
 
 vim.api.nvim_exec(
   [[
@@ -41,3 +41,7 @@ vim.api.nvim_exec(
   set laststatus=3
   ]], false
 )
+
+-- let conform / zls own zig formatting instead of the builtin ftplugin
+vim.g.zig_fmt_parse_errors = 0
+vim.g.zig_fmt_autosave = 0

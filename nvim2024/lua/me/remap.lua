@@ -21,9 +21,9 @@ vim.keymap.set("n", "<leader>5", "'5");
 -- PLUGINS --
 --
 
--- live-grep-telescope
-vim.keymap.set('n', '<leader>fc', '<cmd>lua require(\'telescope.builtin\').grep_string({search = vim.fn.expand("<cword>")})<cr>', {});
-vim.keymap.set('n', '<leader>fw', '<cmd>lua require(\'telescope.builtin\').live_grep()<cr>', {});
+-- grep (snacks picker)
+vim.keymap.set('n', '<leader>fc', function() require('snacks').picker.grep_word() end, { desc = 'Grep <cword>' });
+vim.keymap.set('n', '<leader>fw', function() require('snacks').picker.grep() end, { desc = 'Grep' });
 
 -- GitBlame
 vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<cr>");
